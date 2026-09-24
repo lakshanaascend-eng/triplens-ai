@@ -150,6 +150,8 @@ export function App() {
     return scoreAllDestinationItems(items, currentPreferences);
   }, [items, currentPreferences]);
 
+  const topRankedPlace = places.length > 0 ? places[0] : null;
+
   const itinerary: DayItinerary[] = useMemo(() => {
     return buildItinerary(places, hotels, restaurants, numberOfDays);
   }, [places, hotels, restaurants, numberOfDays]);
@@ -294,49 +296,73 @@ export function App() {
                 <Sparkles size={14} color="#818cf8" />
                 <span className="preview-label">Live Decision Output Preview</span>
               </div>
-              <span className="preview-sub-pill">What TripLens Generates</span>
+              <span className="preview-sub-pill">
+                {topRankedPlace ? `Current #1 for ${destination}` : 'Live Output'}
+              </span>
             </div>
 
             <div className="hero-preview-card">
-              <div className="preview-card-top">
-                <div className="preview-place-info">
-                  <h4 className="preview-place-name">Baga Beach, North Goa</h4>
-                  <div className="preview-place-loc">
-                    <MapPin size={13} color="#94a3b8" />
-                    <span>Calangute Hub • 15 mins transit</span>
+              {topRankedPlace ? (
+                <>
+                  <div className="preview-card-top">
+                    <div className="preview-place-info">
+                      <h4 className="preview-place-name">{topRankedPlace.item.name}</h4>
+                      <div className="preview-place-loc">
+                        <MapPin size={13} color="#94a3b8" />
+                        <span>{topRankedPlace.item.locationZone} • {topRankedPlace.item.distanceMinutes} mins transit</span>
+                      </div>
+                    </div>
+                    <div className="preview-score-badge">
+                      <div className="preview-score-circle">
+                        <span className="preview-score-val">{topRankedPlace.priorityScore}</span>
+                        <span className="preview-score-denom">/100</span>
+                      </div>
+                      <span className="preview-tier-pill">
+                        {topRankedPlace.tier === 'Must Visit' ? '🌟 Must Visit' : topRankedPlace.tier === 'Worth Visiting' ? '👍 Worth Visiting' : topRankedPlace.tier === 'If Time Allows' ? '⏱️ If Time Allows' : '⛔ Skip'}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div className="preview-score-badge">
-                  <div className="preview-score-circle">
-                    <span className="preview-score-val">92</span>
-                    <span className="preview-score-denom">/100</span>
+
+                  <div className="preview-attributes-row">
+                    <span className="preview-attr-pill">⭐ <strong>{topRankedPlace.item.rating}★</strong> ({topRankedPlace.item.reviewCount.toLocaleString()})</span>
+                    <span className="preview-attr-pill"><Users size={12} /> Crowd: <strong>{topRankedPlace.item.crowdLevel}</strong></span>
+                    <span className="preview-attr-pill"><IndianRupee size={12} /> Est. <strong>₹{topRankedPlace.item.estimatedCostINR.toLocaleString()}</strong></span>
+                    <span className="preview-attr-pill"><TrendingUp size={12} /> Trend: <strong>{topRankedPlace.item.recentReviewTrend}</strong></span>
                   </div>
-                  <span className="preview-tier-pill">🌟 Must Visit</span>
-                </div>
-              </div>
 
-              <div className="preview-attributes-row">
-                <span className="preview-attr-pill">⭐ <strong>4.6★</strong> (18,400 reviews)</span>
-                <span className="preview-attr-pill"><Users size={12} /> Crowd: <strong>High</strong></span>
-                <span className="preview-attr-pill"><IndianRupee size={12} /> Est. <strong>₹1,200</strong></span>
-                <span className="preview-attr-pill"><TrendingUp size={12} /> Trend: <strong>Stable</strong></span>
-              </div>
+                  <div className="preview-why-box">
+                    <Sparkles size={16} color="#0284c7" style={{ flexShrink: 0, marginTop: 2 }} />
+                    <div>
+                      <strong style={{ color: '#0369a1' }}>Why this place? </strong>
+                      <span>{topRankedPlace.whyExplanation}</span>
+                    </div>
+                  </div>
 
-              <div className="preview-why-box">
-                <Sparkles size={16} color="#0284c7" style={{ flexShrink: 0, marginTop: 2 }} />
-                <div>
-                  <strong style={{ color: '#0369a1' }}>Why this place? </strong>
-                  <span>Ranked #1 for you: Matches your beachfront & nightlife interests with lively evening crowd energy while staying comfortably inside your budget.</span>
+                  <div className="preview-reality-box">
+                    {topRankedPlace.realityCheck.isFlagged ? (
+                      <ShieldAlert size={16} color="#e11d48" style={{ flexShrink: 0, marginTop: 2 }} />
+                    ) : topRankedPlace.realityCheck.type === 'IMPROVING' ? (
+                      <TrendingUp size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: 2 }} />
+                    ) : (
+                      <CheckCircle2 size={16} color="#64748b" style={{ flexShrink: 0, marginTop: 2 }} />
+                    )}
+                    <div>
+                      <strong style={{ color: topRankedPlace.realityCheck.isFlagged ? '#e11d48' : topRankedPlace.realityCheck.type === 'IMPROVING' ? '#16a34a' : '#475569' }}>
+                        {topRankedPlace.realityCheck.isFlagged
+                          ? '⚠️ RATING REALITY CHECK FLAGGED: '
+                          : topRankedPlace.realityCheck.type === 'IMPROVING'
+                          ? '📈 POSITIVE TREND: '
+                          : '✓ RATING REALITY CHECK: '}
+                      </strong>
+                      <span>{topRankedPlace.realityCheck.message}</span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div style={{ padding: 20, textAlign: 'center', color: '#94a3b8' }}>
+                  Loading destination data...
                 </div>
-              </div>
-
-              <div className="preview-reality-box">
-                <ShieldAlert size={16} color="#e11d48" style={{ flexShrink: 0, marginTop: 2 }} />
-                <div>
-                  <strong style={{ color: '#e11d48' }}>⚠️ RATING REALITY CHECK FLAGGED: </strong>
-                  <span>Recent sentiment dropped 14% due to peak-season taxi congestion — visit before 6 PM to beat the rush.</span>
-                </div>
-              </div>
+              )}
             </div>
           </div>
 

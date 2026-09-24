@@ -21,21 +21,9 @@ export function buildItinerary(
   for (let day = 1; day <= days; day++) {
     const available = pool.filter((p) => !usedPlaceIds.has(p.item.id));
     
-    // Find the most populated zone among currently available places
-    const zoneCounts = new Map<string, number>();
-    available.forEach(p => {
-      const z = p.item.locationZone || 'Central';
-      zoneCounts.set(z, (zoneCounts.get(z) || 0) + 1);
-    });
-    
-    let targetZone = 'Central';
-    let maxCount = 0;
-    zoneCounts.forEach((count, zone) => {
-      if (count > maxCount) {
-        maxCount = count;
-        targetZone = zone;
-      }
-    });
+    // Anchor the day's focus zone to the highest-ranked place currently available
+    const anchorPlace = available.length > 0 ? available[0] : (pool.length > 0 ? pool[0] : null);
+    const targetZone = anchorPlace?.item.locationZone || 'Central';
 
     const pickPlace = (preferredTime: 'morning' | 'afternoon' | 'evening' | 'night') => {
       let poolToUse = pool.filter(p => !usedPlaceIds.has(p.item.id) && (p.item.locationZone || 'Central') === targetZone);
