@@ -1000,7 +1000,7 @@ function TierSection({
 
 // Subcomponent: Place Card with Score, Explanation, Reality Card & Reality Check
 export function PlaceCard({ scored }: { scored: ScoredPlace }) {
-  const { item, priorityScore, tier, whyExplanation, realityCheck, factorScores } = scored;
+  const { item, priorityScore, tier, whyExplanation, realityCheck, factorScores, factorPoints } = scored;
   const [showMath, setShowMath] = useState(false);
 
   const tierClass =
@@ -1063,9 +1063,25 @@ export function PlaceCard({ scored }: { scored: ScoredPlace }) {
       {/* Step 3: Why this place explanation */}
       <div data-testid="why-explanation" className="why-box">
         <Sparkles size={18} className="why-icon" />
-        <div>
+        <div style={{ width: '100%' }}>
           <strong style={{ color: '#0369a1' }}>Why this place? </strong>
           <span>{whyExplanation}</span>
+          {factorPoints && (
+            <div className="factor-breakdown-chips" style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#e0f2fe', color: '#0369a1' }}>
+                ⭐ Quality: +{factorPoints.quality} pts
+              </span>
+              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#dcfce7', color: '#15803d' }}>
+                💰 Budget: +{factorPoints.budget} pts
+              </span>
+              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#fef9c3', color: '#854d0e' }}>
+                📍 Proximity: +{factorPoints.distance} pts
+              </span>
+              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#fce7f3', color: '#9d174d' }}>
+                👥 Crowd Vibe: +{factorPoints.crowd} pts
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -1142,19 +1158,19 @@ export function PlaceCard({ scored }: { scored: ScoredPlace }) {
           <div className="math-details-box">
             <div className="math-row">
               <span>Normalized Rating + Sentiment Utility:</span>
-              <strong>{factorScores.quality} / 1.0</strong>
+              <strong>{factorScores.quality} / 1.0 {factorPoints ? `(→ +${factorPoints.quality} pts)` : ''}</strong>
             </div>
             <div className="math-row">
               <span>Budget Affordability Utility:</span>
-              <strong>{factorScores.budget} / 1.0</strong>
+              <strong>{factorScores.budget} / 1.0 {factorPoints ? `(→ +${factorPoints.budget} pts)` : ''}</strong>
             </div>
             <div className="math-row">
               <span>Transit / Proximity Utility:</span>
-              <strong>{factorScores.distance} / 1.0</strong>
+              <strong>{factorScores.distance} / 1.0 {factorPoints ? `(→ +${factorPoints.distance} pts)` : ''}</strong>
             </div>
             <div className="math-row">
               <span>Crowd Tolerance Fit:</span>
-              <strong>{factorScores.crowd} / 1.0</strong>
+              <strong>{factorScores.crowd} / 1.0 {factorPoints ? `(→ +${factorPoints.crowd} pts)` : ''}</strong>
             </div>
             <div className="math-row">
               <span>Interest Match Multiplier:</span>

@@ -11,19 +11,19 @@ import type {
  * Step 1: Normalize metrics to 0 - 1 scale
  */
 export function normalizeRating(rating: number): number {
-  // Scale from 2.5 - 5.0 to 0 - 1
-  return Math.max(0, Math.min(1, (rating - 2.5) / 2.5));
+  // Scale from 3.5 - 5.0 to 0 - 1 (since travel guide places range 4.0 - 4.9)
+  return Math.max(0.1, Math.min(1.0, (rating - 3.5) / 1.5));
 }
 
 export function normalizeQuality(rating: number, sentimentScore: number): number {
   const normRating = normalizeRating(rating);
-  const normSentiment = Math.max(0, Math.min(1, sentimentScore));
+  const normSentiment = Math.max(0.1, Math.min(1.0, sentimentScore));
   return 0.65 * normRating + 0.35 * normSentiment;
 }
 
 export function normalizeDistance(distanceMinutes: number): number {
-  // 0 mins -> 1.0, 90+ mins -> ~0.05
-  return Math.max(0.05, Math.min(1.0, 1 - distanceMinutes / 90));
+  // 0 mins -> 1.0, 80+ mins -> 0.10
+  return Math.max(0.10, Math.min(1.0, 1.0 - (distanceMinutes / 80) * 0.9));
 }
 
 export function normalizeCrowd(
@@ -32,18 +32,18 @@ export function normalizeCrowd(
 ): number {
   if (userTolerance === 'low') {
     if (crowdLevel === 'low') return 1.0;
-    if (crowdLevel === 'medium') return 0.5;
-    return 0.1; // high crowd penalized
+    if (crowdLevel === 'medium') return 0.55;
+    return 0.15; // high crowd heavily penalized
   }
   if (userTolerance === 'medium') {
-    if (crowdLevel === 'low') return 0.85;
     if (crowdLevel === 'medium') return 1.0;
-    return 0.5;
+    if (crowdLevel === 'low') return 0.80;
+    return 0.45;
   }
   // high crowd tolerance
-  if (crowdLevel === 'low') return 0.7;
-  if (crowdLevel === 'medium') return 0.9;
-  return 1.0; // loves high energy / buzzing spots
+  if (crowdLevel === 'high') return 1.0;
+  if (crowdLevel === 'medium') return 0.65;
+  return 0.25;
 }
 
 export function normalizeCost(
@@ -52,20 +52,21 @@ export function normalizeCost(
   userBudgetINR: number,
   days: number
 ): number {
-  const dailyBudget = Math.max(10, userBudgetINR / Math.max(1, days));
+  const dailyBudget = Math.max(100, userBudgetINR / Math.max(1, days));
 
   let expectedCategoryBudget = dailyBudget * 0.3; // places default
   if (category === 'hotel') expectedCategoryBudget = dailyBudget * 0.55;
   if (category === 'restaurant') expectedCategoryBudget = dailyBudget * 0.25;
 
-  // If cost is within or below expected category budget, score near 1.0
-  if (itemCost <= expectedCategoryBudget) {
-    return Math.max(0.7, 1.0 - (itemCost / expectedCategoryBudget) * 0.2);
-  }
+  const ratio = itemCost / Math.max(1, expectedCategoryBudget);
 
-  // If item exceeds category budget, decay score smoothly
-  const ratio = itemCost / expectedCategoryBudget;
-  return Math.max(0.05, Math.min(1.0, 1.0 / ratio));
+  if (ratio <= 0.2) {
+    return Math.max(0.90, 1.0 - ratio * 0.5);
+  }
+  if (ratio <= 1.0) {
+    return 0.90 - (ratio - 0.2) * (0.35 / 0.8);
+  }
+  return Math.max(0.08, 0.55 / ratio);
 }
 
 /**
@@ -135,7 +136,13 @@ export function generateWhyExplanation(
     crowd: number;
     interestBonus: number;
   },
-  matchingInterests: string[]
+  matchingInterests: string[],
+  factorPoints?: {
+    quality: number;
+    budget: number;
+    distance: number;
+    crowd: number;
+  }
 ): { explanation: string; topDrivers: string[] } {
   const driverCandidates: Driver[] = [];
 
@@ -336,7 +343,11 @@ export function generateWhyExplanation(
     }
   }
 
-  return { explanation, topDrivers };
+  const breakdownText = factorPoints
+    ? ` [Breakdown: Quality +${factorPoints.quality} • Budget +${factorPoints.budget} • Proximity +${factorPoints.distance} • Crowd +${factorPoints.crowd}]`
+    : '';
+
+  return { explanation: `${explanation}${breakdownText}`, topDrivers };
 }
 
 /**
@@ -384,33 +395,32 @@ export function scoreTravelItem(item: TravelItem, prefs: UserPreferences): Score
     nwDistance * normDistanceVal +
     nwCrowd * normCrowdVal;
 
-  // Interest match multiplier
+  // Rebalanced interest match multiplier: gentle tilt (+6% to +12%), no longer overwhelms slider weights
   const matchingInterests = item.interests.filter((i) => prefs.interests.includes(i));
   let interestBonus = 1.0;
   if (prefs.interests.length > 0) {
     if (matchingInterests.length > 0) {
-      interestBonus = 1.0 + Math.min(0.35, matchingInterests.length * 0.18);
+      interestBonus = 1.0 + Math.min(0.12, matchingInterests.length * 0.06);
     } else {
-      interestBonus = 0.82; // slight penalty for zero interest match when user selected interests
+      interestBonus = 0.95; // mild 5% adjustment
     }
   }
 
   // Check if there is a severe crowd mismatch (e.g., user wants strictly low crowd, but place is high crowd)
   const fatalCrowdMismatch = prefs.crowdTolerance === 'low' && item.crowdLevel === 'high';
 
-  // Recent review trend adjustment (-3% for falling, +3% for rising)
+  // Recent review trend adjustment (-3% for falling, +2% for rising)
   let trendMultiplier = 1.0;
-  if (item.recentReviewTrend === 'rising') trendMultiplier = 1.03;
-  if (item.recentReviewTrend === 'falling') trendMultiplier = 0.94;
+  if (item.recentReviewTrend === 'rising') trendMultiplier = 1.02;
+  if (item.recentReviewTrend === 'falling') trendMultiplier = 0.97;
 
   const finalUtility = baseUtility * interestBonus * trendMultiplier;
   let rawScore = finalUtility * 100;
 
-  // Apply an asymptotic curve to prevent artificial clumping at exactly 100/100.
-  // Maps raw scores above 85 softly towards a theoretical max of 100.
-  if (rawScore > 85) {
-    const excess = rawScore - 85;
-    rawScore = 85 + (15 * excess) / (excess + 25);
+  // Apply an asymptotic curve above 88 to give top items smooth separation
+  if (rawScore > 88) {
+    const excess = rawScore - 88;
+    rawScore = 88 + (12 * excess) / (excess + 15);
   }
 
   const priorityScore = Math.max(1, Math.min(100, Math.round(rawScore)));
@@ -426,11 +436,19 @@ export function scoreTravelItem(item: TravelItem, prefs: UserPreferences): Score
     interestBonus: Number(interestBonus.toFixed(2)),
   };
 
+  const factorPoints = {
+    quality: Math.round(nwRating * normQualityVal * 100),
+    budget: Math.round(nwBudget * normBudgetVal * 100),
+    distance: Math.round(nwDistance * normDistanceVal * 100),
+    crowd: Math.round(nwCrowd * normCrowdVal * 100),
+  };
+
   const { explanation, topDrivers } = generateWhyExplanation(
     item,
     prefs,
     factorScores,
-    matchingInterests
+    matchingInterests,
+    factorPoints
   );
 
   return {
@@ -441,6 +459,7 @@ export function scoreTravelItem(item: TravelItem, prefs: UserPreferences): Score
     topDrivers,
     realityCheck,
     factorScores,
+    factorPoints,
   };
 }
 

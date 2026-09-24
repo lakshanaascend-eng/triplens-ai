@@ -73,6 +73,12 @@ export interface ScoredPlace {
     crowd: number; // 0 - 1
     interestBonus: number; // multiplier factor
   };
+  factorPoints?: {
+    quality: number;
+    budget: number;
+    distance: number;
+    crowd: number;
+  };
 }
 
 export interface DayItinerary {
