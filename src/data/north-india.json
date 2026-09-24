@@ -1,0 +1,2682 @@
+[
+  {
+    "id": "jaipur-p1",
+    "name": "Jaipur Museum",
+    "destination": "Jaipur",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.8,
+    "reviewCount": 42315,
+    "sentimentScore": 0.85,
+    "recentSentimentScore": 0.89,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Stunning architecture",
+      "Friendly staff"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 313,
+    "distanceMinutes": 24,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Jaipur Central",
+    "description": "A top rated attraction in Jaipur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "jaipur-p2",
+    "name": "Jaipur Palace",
+    "destination": "Jaipur",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.7,
+    "reviewCount": 16451,
+    "sentimentScore": 0.64,
+    "recentSentimentScore": 0.64,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Clean and well-maintained",
+      "Very peaceful"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 1244,
+    "distanceMinutes": 39,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Jaipur Central",
+    "description": "A top rated attraction in Jaipur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "jaipur-p3",
+    "name": "Jaipur Palace",
+    "destination": "Jaipur",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.5,
+    "reviewCount": 16132,
+    "sentimentScore": 0.84,
+    "recentSentimentScore": 0.59,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Stunning architecture",
+      "Clean and well-maintained"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 739,
+    "distanceMinutes": 35,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Jaipur Central",
+    "description": "A top rated attraction in Jaipur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "jaipur-h1",
+    "name": "Jaipur Palace",
+    "destination": "Jaipur",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "hotel",
+    "rating": 4.7,
+    "reviewCount": 3658,
+    "sentimentScore": 0.92,
+    "recentSentimentScore": 0.7,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 13698,
+    "distanceMinutes": 14,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Jaipur Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Jaipur."
+  },
+  {
+    "id": "jaipur-h2",
+    "name": "Jaipur Palace",
+    "destination": "Jaipur",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "hotel",
+    "rating": 4.4,
+    "reviewCount": 2460,
+    "sentimentScore": 0.93,
+    "recentSentimentScore": 0.81,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 8460,
+    "distanceMinutes": 26,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Jaipur Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Jaipur."
+  },
+  {
+    "id": "jaipur-r1",
+    "name": "Jaipur Bistro",
+    "destination": "Jaipur",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "restaurant",
+    "rating": 4.1,
+    "reviewCount": 2321,
+    "sentimentScore": 0.74,
+    "recentSentimentScore": 0.78,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2791,
+    "distanceMinutes": 13,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Jaipur Food Street",
+    "description": "Popular dining spot in Jaipur serving local delicacies."
+  },
+  {
+    "id": "jaipur-r2",
+    "name": "Jaipur Spice",
+    "destination": "Jaipur",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "restaurant",
+    "rating": 4.4,
+    "reviewCount": 5202,
+    "sentimentScore": 0.81,
+    "recentSentimentScore": 0.85,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 613,
+    "distanceMinutes": 5,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Jaipur Food Street",
+    "description": "Popular dining spot in Jaipur serving local delicacies."
+  },
+  {
+    "id": "udaipur-p1",
+    "name": "Udaipur Fort",
+    "destination": "Udaipur",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.8,
+    "reviewCount": 20683,
+    "sentimentScore": 0.75,
+    "recentSentimentScore": 0.55,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Beautiful scenery",
+      "Historic and majestic"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "budget",
+    "estimatedCostINR": 503,
+    "distanceMinutes": 44,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Udaipur Central",
+    "description": "A top rated attraction in Udaipur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "udaipur-p2",
+    "name": "Udaipur Temple",
+    "destination": "Udaipur",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.5,
+    "reviewCount": 27676,
+    "sentimentScore": 0.73,
+    "recentSentimentScore": 0.79,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Great atmosphere",
+      "Stunning architecture"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 263,
+    "distanceMinutes": 7,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Udaipur Central",
+    "description": "A top rated attraction in Udaipur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "udaipur-p3",
+    "name": "Udaipur Temple",
+    "destination": "Udaipur",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4,
+    "reviewCount": 687,
+    "sentimentScore": 0.69,
+    "recentSentimentScore": 0.72,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Clean and well-maintained",
+      "Beautiful scenery"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 477,
+    "distanceMinutes": 20,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Udaipur Central",
+    "description": "A top rated attraction in Udaipur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "udaipur-h1",
+    "name": "Udaipur Palace",
+    "destination": "Udaipur",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "category": "hotel",
+    "rating": 4.9,
+    "reviewCount": 4032,
+    "sentimentScore": 0.82,
+    "recentSentimentScore": 0.94,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 9118,
+    "distanceMinutes": 15,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Udaipur Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Udaipur."
+  },
+  {
+    "id": "udaipur-h2",
+    "name": "Udaipur Boutique",
+    "destination": "Udaipur",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "category": "hotel",
+    "rating": 4.8,
+    "reviewCount": 2692,
+    "sentimentScore": 0.79,
+    "recentSentimentScore": 0.93,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "budget",
+    "estimatedCostINR": 9235,
+    "distanceMinutes": 10,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Udaipur Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Udaipur."
+  },
+  {
+    "id": "udaipur-r1",
+    "name": "Udaipur Kitchen",
+    "destination": "Udaipur",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "category": "restaurant",
+    "rating": 4.5,
+    "reviewCount": 7882,
+    "sentimentScore": 0.92,
+    "recentSentimentScore": 0.83,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2770,
+    "distanceMinutes": 19,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Udaipur Food Street",
+    "description": "Popular dining spot in Udaipur serving local delicacies."
+  },
+  {
+    "id": "udaipur-r2",
+    "name": "Udaipur Dhaba",
+    "destination": "Udaipur",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "category": "restaurant",
+    "rating": 4.6,
+    "reviewCount": 4699,
+    "sentimentScore": 0.95,
+    "recentSentimentScore": 0.71,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2043,
+    "distanceMinutes": 5,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Udaipur Food Street",
+    "description": "Popular dining spot in Udaipur serving local delicacies."
+  },
+  {
+    "id": "jodhpur-p1",
+    "name": "Jodhpur Temple",
+    "destination": "Jodhpur",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.5,
+    "reviewCount": 12220,
+    "sentimentScore": 0.86,
+    "recentSentimentScore": 0.68,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Must visit",
+      "Friendly staff"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "budget",
+    "estimatedCostINR": 1329,
+    "distanceMinutes": 15,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Jodhpur Central",
+    "description": "A top rated attraction in Jodhpur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "jodhpur-p2",
+    "name": "Jodhpur Temple",
+    "destination": "Jodhpur",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.3,
+    "reviewCount": 29279,
+    "sentimentScore": 0.89,
+    "recentSentimentScore": 0.77,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Historic and majestic",
+      "Great atmosphere"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 632,
+    "distanceMinutes": 26,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Jodhpur Central",
+    "description": "A top rated attraction in Jodhpur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "jodhpur-p3",
+    "name": "Jodhpur Temple",
+    "destination": "Jodhpur",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "category": "place",
+    "rating": 4.5,
+    "reviewCount": 13712,
+    "sentimentScore": 0.77,
+    "recentSentimentScore": 0.93,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Clean and well-maintained",
+      "Amazing views"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 832,
+    "distanceMinutes": 20,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Jodhpur Central",
+    "description": "A top rated attraction in Jodhpur, famous for its stunning features and rich history."
+  },
+  {
+    "id": "jodhpur-h1",
+    "name": "Jodhpur Resort",
+    "destination": "Jodhpur",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "category": "hotel",
+    "rating": 3.9,
+    "reviewCount": 2440,
+    "sentimentScore": 0.85,
+    "recentSentimentScore": 0.7,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "budget",
+    "estimatedCostINR": 2307,
+    "distanceMinutes": 9,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Jodhpur Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Jodhpur."
+  },
+  {
+    "id": "jodhpur-h2",
+    "name": "Jodhpur Grand",
+    "destination": "Jodhpur",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "category": "hotel",
+    "rating": 3.9,
+    "reviewCount": 1625,
+    "sentimentScore": 0.87,
+    "recentSentimentScore": 0.91,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 13481,
+    "distanceMinutes": 5,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Jodhpur Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Jodhpur."
+  },
+  {
+    "id": "jodhpur-r1",
+    "name": "Jodhpur Cafe",
+    "destination": "Jodhpur",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "category": "restaurant",
+    "rating": 4.2,
+    "reviewCount": 1503,
+    "sentimentScore": 0.89,
+    "recentSentimentScore": 0.71,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 305,
+    "distanceMinutes": 12,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Jodhpur Food Street",
+    "description": "Popular dining spot in Jodhpur serving local delicacies."
+  },
+  {
+    "id": "jodhpur-r2",
+    "name": "Jodhpur Spice",
+    "destination": "Jodhpur",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "category": "restaurant",
+    "rating": 4.4,
+    "reviewCount": 1240,
+    "sentimentScore": 0.78,
+    "recentSentimentScore": 0.94,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 967,
+    "distanceMinutes": 10,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Jodhpur Food Street",
+    "description": "Popular dining spot in Jodhpur serving local delicacies."
+  },
+  {
+    "id": "delhi-p1",
+    "name": "Delhi Fort",
+    "destination": "Delhi",
+    "city": "Delhi",
+    "state": "Delhi",
+    "category": "place",
+    "rating": 4.6,
+    "reviewCount": 24848,
+    "sentimentScore": 0.92,
+    "recentSentimentScore": 0.67,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Great atmosphere",
+      "Stunning architecture"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1079,
+    "distanceMinutes": 48,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Delhi Central",
+    "description": "A top rated attraction in Delhi, famous for its stunning features and rich history."
+  },
+  {
+    "id": "delhi-p2",
+    "name": "Delhi Heritage Walk",
+    "destination": "Delhi",
+    "city": "Delhi",
+    "state": "Delhi",
+    "category": "place",
+    "rating": 4.2,
+    "reviewCount": 44542,
+    "sentimentScore": 0.63,
+    "recentSentimentScore": 0.86,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Great atmosphere",
+      "Very peaceful"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 876,
+    "distanceMinutes": 55,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Delhi Central",
+    "description": "A top rated attraction in Delhi, famous for its stunning features and rich history."
+  },
+  {
+    "id": "delhi-p3",
+    "name": "Delhi Museum",
+    "destination": "Delhi",
+    "city": "Delhi",
+    "state": "Delhi",
+    "category": "place",
+    "rating": 4.4,
+    "reviewCount": 28231,
+    "sentimentScore": 0.7,
+    "recentSentimentScore": 0.75,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Delicious food",
+      "Friendly staff"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 972,
+    "distanceMinutes": 37,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Delhi Central",
+    "description": "A top rated attraction in Delhi, famous for its stunning features and rich history."
+  },
+  {
+    "id": "delhi-h1",
+    "name": "Delhi Boutique",
+    "destination": "Delhi",
+    "city": "Delhi",
+    "state": "Delhi",
+    "category": "hotel",
+    "rating": 4.2,
+    "reviewCount": 3925,
+    "sentimentScore": 0.79,
+    "recentSentimentScore": 0.86,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 12482,
+    "distanceMinutes": 9,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Delhi Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Delhi."
+  },
+  {
+    "id": "delhi-h2",
+    "name": "Delhi Resort",
+    "destination": "Delhi",
+    "city": "Delhi",
+    "state": "Delhi",
+    "category": "hotel",
+    "rating": 4.9,
+    "reviewCount": 4685,
+    "sentimentScore": 0.92,
+    "recentSentimentScore": 0.61,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 10596,
+    "distanceMinutes": 24,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Delhi Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Delhi."
+  },
+  {
+    "id": "delhi-r1",
+    "name": "Delhi Kitchen",
+    "destination": "Delhi",
+    "city": "Delhi",
+    "state": "Delhi",
+    "category": "restaurant",
+    "rating": 4.1,
+    "reviewCount": 7264,
+    "sentimentScore": 0.7,
+    "recentSentimentScore": 0.9,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 2933,
+    "distanceMinutes": 11,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Delhi Food Street",
+    "description": "Popular dining spot in Delhi serving local delicacies."
+  },
+  {
+    "id": "delhi-r2",
+    "name": "Delhi Dhaba",
+    "destination": "Delhi",
+    "city": "Delhi",
+    "state": "Delhi",
+    "category": "restaurant",
+    "rating": 4.3,
+    "reviewCount": 227,
+    "sentimentScore": 0.82,
+    "recentSentimentScore": 0.88,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2416,
+    "distanceMinutes": 19,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Delhi Food Street",
+    "description": "Popular dining spot in Delhi serving local delicacies."
+  },
+  {
+    "id": "agra-p1",
+    "name": "Agra Heritage Walk",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "place",
+    "rating": 4.2,
+    "reviewCount": 40712,
+    "sentimentScore": 0.65,
+    "recentSentimentScore": 0.56,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Beautiful scenery",
+      "Must visit"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1268,
+    "distanceMinutes": 60,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Agra Central",
+    "description": "A top rated attraction in Agra, famous for its stunning features and rich history."
+  },
+  {
+    "id": "agra-p2",
+    "name": "Agra Fort",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "place",
+    "rating": 4.2,
+    "reviewCount": 17352,
+    "sentimentScore": 0.65,
+    "recentSentimentScore": 0.61,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Historic and majestic",
+      "Great atmosphere"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1122,
+    "distanceMinutes": 12,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Agra Central",
+    "description": "A top rated attraction in Agra, famous for its stunning features and rich history."
+  },
+  {
+    "id": "agra-p3",
+    "name": "Agra Temple",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "place",
+    "rating": 4.5,
+    "reviewCount": 42749,
+    "sentimentScore": 0.91,
+    "recentSentimentScore": 0.95,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Very peaceful",
+      "Clean and well-maintained"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 533,
+    "distanceMinutes": 60,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Agra Central",
+    "description": "A top rated attraction in Agra, famous for its stunning features and rich history."
+  },
+  {
+    "id": "agra-p4",
+    "name": "Agra Museum",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "place",
+    "rating": 4.4,
+    "reviewCount": 39516,
+    "sentimentScore": 0.74,
+    "recentSentimentScore": 0.83,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Amazing views",
+      "Must visit"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 202,
+    "distanceMinutes": 52,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Agra Central",
+    "description": "A top rated attraction in Agra, famous for its stunning features and rich history."
+  },
+  {
+    "id": "agra-h1",
+    "name": "Agra Boutique",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "hotel",
+    "rating": 4.3,
+    "reviewCount": 4157,
+    "sentimentScore": 0.75,
+    "recentSentimentScore": 0.65,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 10382,
+    "distanceMinutes": 6,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Agra Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Agra."
+  },
+  {
+    "id": "agra-h2",
+    "name": "Agra Boutique",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "hotel",
+    "rating": 4.4,
+    "reviewCount": 3943,
+    "sentimentScore": 0.76,
+    "recentSentimentScore": 0.93,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 13311,
+    "distanceMinutes": 27,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Agra Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Agra."
+  },
+  {
+    "id": "agra-r1",
+    "name": "Agra Spice",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "restaurant",
+    "rating": 4.6,
+    "reviewCount": 2558,
+    "sentimentScore": 0.79,
+    "recentSentimentScore": 0.74,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "budget",
+    "estimatedCostINR": 2404,
+    "distanceMinutes": 16,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Agra Food Street",
+    "description": "Popular dining spot in Agra serving local delicacies."
+  },
+  {
+    "id": "agra-r2",
+    "name": "Agra Cafe",
+    "destination": "Agra",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "restaurant",
+    "rating": 4,
+    "reviewCount": 6562,
+    "sentimentScore": 0.84,
+    "recentSentimentScore": 0.93,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 1835,
+    "distanceMinutes": 16,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Agra Food Street",
+    "description": "Popular dining spot in Agra serving local delicacies."
+  },
+  {
+    "id": "varanasi-p1",
+    "name": "Varanasi Temple",
+    "destination": "Varanasi",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "place",
+    "rating": 4,
+    "reviewCount": 45409,
+    "sentimentScore": 0.75,
+    "recentSentimentScore": 0.68,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Clean and well-maintained"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 484,
+    "distanceMinutes": 16,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Varanasi Central",
+    "description": "A top rated attraction in Varanasi, famous for its stunning features and rich history."
+  },
+  {
+    "id": "varanasi-p2",
+    "name": "Varanasi Museum",
+    "destination": "Varanasi",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "place",
+    "rating": 4.1,
+    "reviewCount": 22785,
+    "sentimentScore": 0.64,
+    "recentSentimentScore": 0.94,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Stunning architecture",
+      "Must visit"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 407,
+    "distanceMinutes": 16,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Varanasi Central",
+    "description": "A top rated attraction in Varanasi, famous for its stunning features and rich history."
+  },
+  {
+    "id": "varanasi-p3",
+    "name": "Varanasi Heritage Walk",
+    "destination": "Varanasi",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "place",
+    "rating": 4.7,
+    "reviewCount": 3435,
+    "sentimentScore": 0.65,
+    "recentSentimentScore": 0.58,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Amazing views",
+      "Friendly staff"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1251,
+    "distanceMinutes": 42,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Varanasi Central",
+    "description": "A top rated attraction in Varanasi, famous for its stunning features and rich history."
+  },
+  {
+    "id": "varanasi-h1",
+    "name": "Varanasi Grand",
+    "destination": "Varanasi",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "hotel",
+    "rating": 4,
+    "reviewCount": 2364,
+    "sentimentScore": 0.71,
+    "recentSentimentScore": 0.76,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2342,
+    "distanceMinutes": 26,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Varanasi Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Varanasi."
+  },
+  {
+    "id": "varanasi-h2",
+    "name": "Varanasi Grand",
+    "destination": "Varanasi",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "hotel",
+    "rating": 4.2,
+    "reviewCount": 651,
+    "sentimentScore": 0.93,
+    "recentSentimentScore": 0.76,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 12261,
+    "distanceMinutes": 25,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Varanasi Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Varanasi."
+  },
+  {
+    "id": "varanasi-r1",
+    "name": "Varanasi Cafe",
+    "destination": "Varanasi",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "restaurant",
+    "rating": 4.3,
+    "reviewCount": 6049,
+    "sentimentScore": 0.73,
+    "recentSentimentScore": 0.77,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 2687,
+    "distanceMinutes": 12,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Varanasi Food Street",
+    "description": "Popular dining spot in Varanasi serving local delicacies."
+  },
+  {
+    "id": "varanasi-r2",
+    "name": "Varanasi Cafe",
+    "destination": "Varanasi",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "restaurant",
+    "rating": 4.3,
+    "reviewCount": 6941,
+    "sentimentScore": 0.8,
+    "recentSentimentScore": 0.85,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2484,
+    "distanceMinutes": 17,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Varanasi Food Street",
+    "description": "Popular dining spot in Varanasi serving local delicacies."
+  },
+  {
+    "id": "rishikesh-p1",
+    "name": "Rishikesh Palace",
+    "destination": "Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "category": "place",
+    "rating": 4.9,
+    "reviewCount": 47130,
+    "sentimentScore": 0.8,
+    "recentSentimentScore": 0.75,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Great atmosphere",
+      "Delicious food"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 517,
+    "distanceMinutes": 37,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Rishikesh Central",
+    "description": "A top rated attraction in Rishikesh, famous for its stunning features and rich history."
+  },
+  {
+    "id": "rishikesh-p2",
+    "name": "Rishikesh Fort",
+    "destination": "Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "category": "place",
+    "rating": 4.3,
+    "reviewCount": 14882,
+    "sentimentScore": 0.77,
+    "recentSentimentScore": 0.67,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Stunning architecture",
+      "Amazing views"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 346,
+    "distanceMinutes": 22,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Rishikesh Central",
+    "description": "A top rated attraction in Rishikesh, famous for its stunning features and rich history."
+  },
+  {
+    "id": "rishikesh-p3",
+    "name": "Rishikesh Museum",
+    "destination": "Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "category": "place",
+    "rating": 4.2,
+    "reviewCount": 29085,
+    "sentimentScore": 0.69,
+    "recentSentimentScore": 0.59,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Amazing views",
+      "Friendly staff"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 512,
+    "distanceMinutes": 18,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Rishikesh Central",
+    "description": "A top rated attraction in Rishikesh, famous for its stunning features and rich history."
+  },
+  {
+    "id": "rishikesh-h1",
+    "name": "Rishikesh Inn",
+    "destination": "Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "category": "hotel",
+    "rating": 4.2,
+    "reviewCount": 1415,
+    "sentimentScore": 0.92,
+    "recentSentimentScore": 0.85,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2456,
+    "distanceMinutes": 15,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Rishikesh Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Rishikesh."
+  },
+  {
+    "id": "rishikesh-h2",
+    "name": "Rishikesh Boutique",
+    "destination": "Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "category": "hotel",
+    "rating": 4.1,
+    "reviewCount": 1342,
+    "sentimentScore": 0.89,
+    "recentSentimentScore": 0.67,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 8397,
+    "distanceMinutes": 16,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Rishikesh Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Rishikesh."
+  },
+  {
+    "id": "rishikesh-r1",
+    "name": "Rishikesh Bistro",
+    "destination": "Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "category": "restaurant",
+    "rating": 4.1,
+    "reviewCount": 4783,
+    "sentimentScore": 0.7,
+    "recentSentimentScore": 0.83,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 932,
+    "distanceMinutes": 10,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Rishikesh Food Street",
+    "description": "Popular dining spot in Rishikesh serving local delicacies."
+  },
+  {
+    "id": "rishikesh-r2",
+    "name": "Rishikesh Spice",
+    "destination": "Rishikesh",
+    "city": "Rishikesh",
+    "state": "Uttarakhand",
+    "category": "restaurant",
+    "rating": 4.6,
+    "reviewCount": 7982,
+    "sentimentScore": 0.74,
+    "recentSentimentScore": 0.75,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1277,
+    "distanceMinutes": 13,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Rishikesh Food Street",
+    "description": "Popular dining spot in Rishikesh serving local delicacies."
+  },
+  {
+    "id": "nainital-p1",
+    "name": "Nainital Forest Reserve",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "place",
+    "rating": 4.7,
+    "reviewCount": 45273,
+    "sentimentScore": 0.72,
+    "recentSentimentScore": 0.79,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Very peaceful",
+      "Clean and well-maintained"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 602,
+    "distanceMinutes": 59,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Nainital Central",
+    "description": "A top rated attraction in Nainital, famous for its stunning features and rich history."
+  },
+  {
+    "id": "nainital-p2",
+    "name": "Nainital Lake Promenade",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "place",
+    "rating": 4,
+    "reviewCount": 3930,
+    "sentimentScore": 0.76,
+    "recentSentimentScore": 0.65,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Great atmosphere",
+      "Historic and majestic"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 516,
+    "distanceMinutes": 22,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Nainital Central",
+    "description": "A top rated attraction in Nainital, famous for its stunning features and rich history."
+  },
+  {
+    "id": "nainital-p3",
+    "name": "Nainital Forest Reserve",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "place",
+    "rating": 4.8,
+    "reviewCount": 48510,
+    "sentimentScore": 0.91,
+    "recentSentimentScore": 0.86,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Amazing views",
+      "Clean and well-maintained"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 1487,
+    "distanceMinutes": 18,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Nainital Central",
+    "description": "A top rated attraction in Nainital, famous for its stunning features and rich history."
+  },
+  {
+    "id": "nainital-p4",
+    "name": "Nainital Forest Reserve",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "place",
+    "rating": 4.8,
+    "reviewCount": 34413,
+    "sentimentScore": 0.89,
+    "recentSentimentScore": 0.85,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Clean and well-maintained",
+      "Delicious food"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 761,
+    "distanceMinutes": 19,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Nainital Central",
+    "description": "A top rated attraction in Nainital, famous for its stunning features and rich history."
+  },
+  {
+    "id": "nainital-h1",
+    "name": "Nainital Palace",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "hotel",
+    "rating": 4.2,
+    "reviewCount": 4933,
+    "sentimentScore": 0.8,
+    "recentSentimentScore": 0.73,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "budget",
+    "estimatedCostINR": 5585,
+    "distanceMinutes": 11,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Nainital Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Nainital."
+  },
+  {
+    "id": "nainital-h2",
+    "name": "Nainital Grand",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "hotel",
+    "rating": 4.1,
+    "reviewCount": 4717,
+    "sentimentScore": 0.89,
+    "recentSentimentScore": 0.61,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 2778,
+    "distanceMinutes": 30,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Nainital Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Nainital."
+  },
+  {
+    "id": "nainital-r1",
+    "name": "Nainital Dhaba",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "restaurant",
+    "rating": 4.5,
+    "reviewCount": 554,
+    "sentimentScore": 0.9,
+    "recentSentimentScore": 0.79,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 1630,
+    "distanceMinutes": 8,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Nainital Food Street",
+    "description": "Popular dining spot in Nainital serving local delicacies."
+  },
+  {
+    "id": "nainital-r2",
+    "name": "Nainital Dhaba",
+    "destination": "Nainital",
+    "city": "Nainital",
+    "state": "Uttarakhand",
+    "category": "restaurant",
+    "rating": 4.4,
+    "reviewCount": 6928,
+    "sentimentScore": 0.76,
+    "recentSentimentScore": 0.76,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1142,
+    "distanceMinutes": 10,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Nainital Food Street",
+    "description": "Popular dining spot in Nainital serving local delicacies."
+  },
+  {
+    "id": "manali-p1",
+    "name": "Manali Forest Reserve",
+    "destination": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "place",
+    "rating": 4.3,
+    "reviewCount": 2116,
+    "sentimentScore": 0.63,
+    "recentSentimentScore": 0.77,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Great atmosphere",
+      "Very peaceful"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 1219,
+    "distanceMinutes": 37,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Manali Central",
+    "description": "A top rated attraction in Manali, famous for its stunning features and rich history."
+  },
+  {
+    "id": "manali-p2",
+    "name": "Manali Valley Point",
+    "destination": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "place",
+    "rating": 4.8,
+    "reviewCount": 17681,
+    "sentimentScore": 0.95,
+    "recentSentimentScore": 0.54,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Great atmosphere",
+      "Amazing views"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 1023,
+    "distanceMinutes": 13,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Manali Central",
+    "description": "A top rated attraction in Manali, famous for its stunning features and rich history."
+  },
+  {
+    "id": "manali-p3",
+    "name": "Manali Valley Point",
+    "destination": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "place",
+    "rating": 4.4,
+    "reviewCount": 28479,
+    "sentimentScore": 0.76,
+    "recentSentimentScore": 0.76,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Must visit",
+      "Stunning architecture"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1236,
+    "distanceMinutes": 7,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "morning",
+    "locationZone": "Manali Central",
+    "description": "A top rated attraction in Manali, famous for its stunning features and rich history."
+  },
+  {
+    "id": "manali-h1",
+    "name": "Manali Grand",
+    "destination": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hotel",
+    "rating": 4.6,
+    "reviewCount": 3800,
+    "sentimentScore": 0.91,
+    "recentSentimentScore": 0.84,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 14810,
+    "distanceMinutes": 5,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Manali Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Manali."
+  },
+  {
+    "id": "manali-h2",
+    "name": "Manali Palace",
+    "destination": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hotel",
+    "rating": 4,
+    "reviewCount": 2290,
+    "sentimentScore": 0.7,
+    "recentSentimentScore": 0.71,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "budget",
+    "estimatedCostINR": 13020,
+    "distanceMinutes": 14,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Manali Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Manali."
+  },
+  {
+    "id": "manali-r1",
+    "name": "Manali Cafe",
+    "destination": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "restaurant",
+    "rating": 4,
+    "reviewCount": 4734,
+    "sentimentScore": 0.94,
+    "recentSentimentScore": 0.7,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1681,
+    "distanceMinutes": 14,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Manali Food Street",
+    "description": "Popular dining spot in Manali serving local delicacies."
+  },
+  {
+    "id": "manali-r2",
+    "name": "Manali Spice",
+    "destination": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "restaurant",
+    "rating": 4.3,
+    "reviewCount": 6228,
+    "sentimentScore": 0.74,
+    "recentSentimentScore": 0.89,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 972,
+    "distanceMinutes": 19,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Manali Food Street",
+    "description": "Popular dining spot in Manali serving local delicacies."
+  },
+  {
+    "id": "shimla-p1",
+    "name": "Shimla Hills View",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "place",
+    "rating": 4.5,
+    "reviewCount": 30395,
+    "sentimentScore": 0.86,
+    "recentSentimentScore": 0.89,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Amazing views",
+      "Great atmosphere"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 1416,
+    "distanceMinutes": 13,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Shimla Central",
+    "description": "A top rated attraction in Shimla, famous for its stunning features and rich history."
+  },
+  {
+    "id": "shimla-p2",
+    "name": "Shimla Lake Promenade",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "place",
+    "rating": 4,
+    "reviewCount": 30203,
+    "sentimentScore": 0.64,
+    "recentSentimentScore": 0.5,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Stunning architecture",
+      "Historic and majestic"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1181,
+    "distanceMinutes": 25,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Shimla Central",
+    "description": "A top rated attraction in Shimla, famous for its stunning features and rich history."
+  },
+  {
+    "id": "shimla-p3",
+    "name": "Shimla Hills View",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "place",
+    "rating": 4.2,
+    "reviewCount": 49998,
+    "sentimentScore": 0.74,
+    "recentSentimentScore": 0.61,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Stunning architecture",
+      "Great atmosphere"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 982,
+    "distanceMinutes": 54,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Shimla Central",
+    "description": "A top rated attraction in Shimla, famous for its stunning features and rich history."
+  },
+  {
+    "id": "shimla-p4",
+    "name": "Shimla Forest Reserve",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "place",
+    "rating": 4.7,
+    "reviewCount": 9150,
+    "sentimentScore": 0.65,
+    "recentSentimentScore": 0.97,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Friendly staff",
+      "Very peaceful"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "budget",
+    "estimatedCostINR": 273,
+    "distanceMinutes": 46,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Shimla Central",
+    "description": "A top rated attraction in Shimla, famous for its stunning features and rich history."
+  },
+  {
+    "id": "shimla-h1",
+    "name": "Shimla Palace",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "hotel",
+    "rating": 4.1,
+    "reviewCount": 2211,
+    "sentimentScore": 0.84,
+    "recentSentimentScore": 0.65,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 12231,
+    "distanceMinutes": 22,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Shimla Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Shimla."
+  },
+  {
+    "id": "shimla-h2",
+    "name": "Shimla Grand",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "hotel",
+    "rating": 3.8,
+    "reviewCount": 1866,
+    "sentimentScore": 0.9,
+    "recentSentimentScore": 0.69,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 9919,
+    "distanceMinutes": 21,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Shimla Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Shimla."
+  },
+  {
+    "id": "shimla-r1",
+    "name": "Shimla Spice",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "restaurant",
+    "rating": 4.4,
+    "reviewCount": 1289,
+    "sentimentScore": 0.79,
+    "recentSentimentScore": 0.87,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 1729,
+    "distanceMinutes": 17,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Shimla Food Street",
+    "description": "Popular dining spot in Shimla serving local delicacies."
+  },
+  {
+    "id": "shimla-r2",
+    "name": "Shimla Dhaba",
+    "destination": "Shimla",
+    "city": "Shimla",
+    "state": "Himachal Pradesh",
+    "category": "restaurant",
+    "rating": 4.3,
+    "reviewCount": 6123,
+    "sentimentScore": 0.73,
+    "recentSentimentScore": 0.72,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2774,
+    "distanceMinutes": 12,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Shimla Food Street",
+    "description": "Popular dining spot in Shimla serving local delicacies."
+  },
+  {
+    "id": "amritsar-p1",
+    "name": "Amritsar Heritage Walk",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "place",
+    "rating": 4.6,
+    "reviewCount": 24848,
+    "sentimentScore": 0.91,
+    "recentSentimentScore": 0.62,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Stunning architecture",
+      "Friendly staff"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 431,
+    "distanceMinutes": 31,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Amritsar Central",
+    "description": "A top rated attraction in Amritsar, famous for its stunning features and rich history."
+  },
+  {
+    "id": "amritsar-p2",
+    "name": "Amritsar Palace",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "place",
+    "rating": 4.8,
+    "reviewCount": 1039,
+    "sentimentScore": 0.88,
+    "recentSentimentScore": 0.78,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Historic and majestic",
+      "Amazing views"
+    ],
+    "negativeTags": [
+      "Hard to find parking"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 531,
+    "distanceMinutes": 59,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Amritsar Central",
+    "description": "A top rated attraction in Amritsar, famous for its stunning features and rich history."
+  },
+  {
+    "id": "amritsar-p3",
+    "name": "Amritsar Fort",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "place",
+    "rating": 4.4,
+    "reviewCount": 42581,
+    "sentimentScore": 0.72,
+    "recentSentimentScore": 0.95,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Very peaceful",
+      "Delicious food"
+    ],
+    "negativeTags": [
+      "Can get too hot during the day"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 462,
+    "distanceMinutes": 59,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Amritsar Central",
+    "description": "A top rated attraction in Amritsar, famous for its stunning features and rich history."
+  },
+  {
+    "id": "amritsar-p4",
+    "name": "Amritsar Fort",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "place",
+    "rating": 4.2,
+    "reviewCount": 2750,
+    "sentimentScore": 0.65,
+    "recentSentimentScore": 0.81,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Very peaceful",
+      "Very peaceful"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "budget",
+    "estimatedCostINR": 593,
+    "distanceMinutes": 32,
+    "interests": [
+      "culture",
+      "heritage"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Amritsar Central",
+    "description": "A top rated attraction in Amritsar, famous for its stunning features and rich history."
+  },
+  {
+    "id": "amritsar-h1",
+    "name": "Amritsar Resort",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "hotel",
+    "rating": 4.8,
+    "reviewCount": 827,
+    "sentimentScore": 0.7,
+    "recentSentimentScore": 0.72,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "budget",
+    "estimatedCostINR": 10246,
+    "distanceMinutes": 13,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Amritsar Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Amritsar."
+  },
+  {
+    "id": "amritsar-h2",
+    "name": "Amritsar Inn",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "hotel",
+    "rating": 4.2,
+    "reviewCount": 2269,
+    "sentimentScore": 0.82,
+    "recentSentimentScore": 0.9,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Very crowded"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 3217,
+    "distanceMinutes": 20,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Amritsar Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Amritsar."
+  },
+  {
+    "id": "amritsar-r1",
+    "name": "Amritsar Spice",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "restaurant",
+    "rating": 4.5,
+    "reviewCount": 6463,
+    "sentimentScore": 0.87,
+    "recentSentimentScore": 0.86,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2864,
+    "distanceMinutes": 13,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Amritsar Food Street",
+    "description": "Popular dining spot in Amritsar serving local delicacies."
+  },
+  {
+    "id": "amritsar-r2",
+    "name": "Amritsar Kitchen",
+    "destination": "Amritsar",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "category": "restaurant",
+    "rating": 4.1,
+    "reviewCount": 5566,
+    "sentimentScore": 0.81,
+    "recentSentimentScore": 0.73,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 2841,
+    "distanceMinutes": 7,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Amritsar Food Street",
+    "description": "Popular dining spot in Amritsar serving local delicacies."
+  },
+  {
+    "id": "srinagar-p1",
+    "name": "Srinagar Lake Promenade",
+    "destination": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "category": "place",
+    "rating": 4.6,
+    "reviewCount": 46935,
+    "sentimentScore": 0.85,
+    "recentSentimentScore": 0.66,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Historic and majestic",
+      "Historic and majestic"
+    ],
+    "negativeTags": [
+      "Average service"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1422,
+    "distanceMinutes": 25,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Srinagar Central",
+    "description": "A top rated attraction in Srinagar, famous for its stunning features and rich history."
+  },
+  {
+    "id": "srinagar-p2",
+    "name": "Srinagar Forest Reserve",
+    "destination": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "category": "place",
+    "rating": 4.1,
+    "reviewCount": 9960,
+    "sentimentScore": 0.73,
+    "recentSentimentScore": 0.61,
+    "recentReviewTrend": "declining",
+    "positiveTags": [
+      "Very peaceful",
+      "Very peaceful"
+    ],
+    "negativeTags": [
+      "A bit expensive"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "luxury",
+    "estimatedCostINR": 753,
+    "distanceMinutes": 6,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Srinagar Central",
+    "description": "A top rated attraction in Srinagar, famous for its stunning features and rich history."
+  },
+  {
+    "id": "srinagar-p3",
+    "name": "Srinagar Lake Promenade",
+    "destination": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "category": "place",
+    "rating": 4.5,
+    "reviewCount": 4324,
+    "sentimentScore": 0.89,
+    "recentSentimentScore": 0.78,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Stunning architecture",
+      "Amazing views"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 1251,
+    "distanceMinutes": 38,
+    "interests": [
+      "nature",
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "afternoon",
+    "locationZone": "Srinagar Central",
+    "description": "A top rated attraction in Srinagar, famous for its stunning features and rich history."
+  },
+  {
+    "id": "srinagar-h1",
+    "name": "Srinagar Inn",
+    "destination": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "category": "hotel",
+    "rating": 4.3,
+    "reviewCount": 3299,
+    "sentimentScore": 0.76,
+    "recentSentimentScore": 0.87,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Too touristy"
+    ],
+    "crowdLevel": "high",
+    "priceTier": "luxury",
+    "estimatedCostINR": 4304,
+    "distanceMinutes": 17,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Srinagar Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Srinagar."
+  },
+  {
+    "id": "srinagar-h2",
+    "name": "Srinagar Palace",
+    "destination": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "category": "hotel",
+    "rating": 4.6,
+    "reviewCount": 2167,
+    "sentimentScore": 0.77,
+    "recentSentimentScore": 0.93,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Comfortable rooms",
+      "Great service"
+    ],
+    "negativeTags": [
+      "Noisy at times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "moderate",
+    "estimatedCostINR": 5750,
+    "distanceMinutes": 12,
+    "interests": [
+      "peaceful spots"
+    ],
+    "bestTimeOfDay": "evening",
+    "locationZone": "Srinagar Hub",
+    "description": "A comfortable and well-reviewed accommodation option in Srinagar."
+  },
+  {
+    "id": "srinagar-r1",
+    "name": "Srinagar Cafe",
+    "destination": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "category": "restaurant",
+    "rating": 4.1,
+    "reviewCount": 4219,
+    "sentimentScore": 0.78,
+    "recentSentimentScore": 0.72,
+    "recentReviewTrend": "improving",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "low",
+    "priceTier": "luxury",
+    "estimatedCostINR": 2353,
+    "distanceMinutes": 11,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Srinagar Food Street",
+    "description": "Popular dining spot in Srinagar serving local delicacies."
+  },
+  {
+    "id": "srinagar-r2",
+    "name": "Srinagar Dhaba",
+    "destination": "Srinagar",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "category": "restaurant",
+    "rating": 4.4,
+    "reviewCount": 1554,
+    "sentimentScore": 0.79,
+    "recentSentimentScore": 0.85,
+    "recentReviewTrend": "stable",
+    "positiveTags": [
+      "Delicious food",
+      "Authentic taste"
+    ],
+    "negativeTags": [
+      "Long wait times"
+    ],
+    "crowdLevel": "medium",
+    "priceTier": "budget",
+    "estimatedCostINR": 1450,
+    "distanceMinutes": 7,
+    "interests": [
+      "food"
+    ],
+    "bestTimeOfDay": "night",
+    "locationZone": "Srinagar Food Street",
+    "description": "Popular dining spot in Srinagar serving local delicacies."
+  }
+]
