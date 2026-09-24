@@ -58,6 +58,60 @@ const DESTINATION_META: Record<string, { badge: string; desc: string }> = {
   Pondicherry: { badge: '🏛️ French Quarter', desc: 'Colonial lanes, serene beaches & cafes' },
 };
 
+interface TravelerPreset {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  targetInterests: Interest[];
+  crowdTolerance: CrowdLevel;
+  priorityWeights: {
+    rating: number;
+    budget: number;
+    distance: number;
+    crowd: number;
+  };
+}
+
+const TRAVELER_PRESETS: TravelerPreset[] = [
+  {
+    id: 'party-nightlife',
+    name: 'Party & Nightlife',
+    icon: '🎉',
+    description: 'High energy, vibrant evening crowd, close to nightlife & dining',
+    targetInterests: ['nightlife', 'food', 'beaches'],
+    crowdTolerance: 'high',
+    priorityWeights: { rating: 3, budget: 3, distance: 4, crowd: 5 },
+  },
+  {
+    id: 'peaceful-secluded',
+    name: 'Peaceful & Secluded',
+    icon: '🌿',
+    description: 'Low crowd, tranquil atmosphere, quality & comfort first',
+    targetInterests: ['peaceful spots', 'nature'],
+    crowdTolerance: 'low',
+    priorityWeights: { rating: 5, budget: 2, distance: 2, crowd: 5 },
+  },
+  {
+    id: 'nature-hills',
+    name: 'Nature & Hills',
+    icon: '⛰️',
+    description: 'Scenic viewpoints, outdoor trails, relaxed pacing',
+    targetInterests: ['nature', 'peaceful spots'],
+    crowdTolerance: 'low',
+    priorityWeights: { rating: 4, budget: 3, distance: 3, crowd: 4 },
+  },
+  {
+    id: 'heritage-cafes',
+    name: 'Heritage & Cafes',
+    icon: '🏛️',
+    description: 'Culture, historical landmarks, local dining & easy transit',
+    targetInterests: ['culture', 'food'],
+    crowdTolerance: 'medium',
+    priorityWeights: { rating: 4, budget: 4, distance: 4, crowd: 3 },
+  },
+];
+
 export function App() {
   // Input Form State
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -75,6 +129,7 @@ export function App() {
     distance: 3,
     crowd: 2,
   });
+  const [activePreset, setActivePreset] = useState<string | null>(null);
 
   // Active Tab for Results
   const [activeTab, setActiveTab] = useState<'places' | 'itinerary' | 'hotels' | 'dining'>(
@@ -94,20 +149,40 @@ export function App() {
 
     const loadData = async () => {
       const staticItems = getItemsByDestination(destination);
+      let loadedItems: TravelItem[] = [];
+      let source: 'static' | 'api' | 'fallback' | 'curated' = 'static';
+
       if (staticItems.length > 0) {
-        if (active) {
-          setItems(staticItems);
-          setDataSource('static');
-          setTimeout(() => { if (active) setIsComputing(false); }, 450);
-        }
-        return;
+        loadedItems = staticItems;
+        source = 'static';
+      } else {
+        const result = await fetchLiveDestinationData(destination);
+        loadedItems = result.items;
+        source = result.source;
       }
 
-      const result = await fetchLiveDestinationData(destination);
       if (active) {
-        setItems(result.items);
-        setDataSource(result.source);
-        setIsComputing(false);
+        setItems(loadedItems);
+        setDataSource(source);
+        if (source === 'static') {
+          setTimeout(() => { if (active) setIsComputing(false); }, 450);
+        } else {
+          setIsComputing(false);
+        }
+
+        // Reset selected interests to ones that exist for that destination
+        const destInterests = Array.from(
+          new Set(loadedItems.flatMap((item) => item.interests || []))
+        ) as Interest[];
+
+        if (destInterests.length > 0) {
+          setSelectedInterests((prev) => {
+            const valid = prev.filter((i) => destInterests.includes(i));
+            // A hill station or any destination without previous interests defaults to valid destination interests
+            return valid.length > 0 ? valid : destInterests.slice(0, 2);
+          });
+        }
+        setActivePreset(null);
       }
     };
 
@@ -168,6 +243,7 @@ export function App() {
 
   // Form Handlers
   const handleInterestToggle = (interest: Interest) => {
+    setActivePreset(null);
     if (selectedInterests.includes(interest)) {
       setSelectedInterests(selectedInterests.filter((i) => i !== interest));
     } else {
@@ -176,42 +252,37 @@ export function App() {
   };
 
   const handleWeightChange = (key: keyof typeof priorityWeights, val: number) => {
+    setActivePreset(null);
     setPriorityWeights((prev) => ({
       ...prev,
       [key]: val,
     }));
   };
 
-  // Quick Preset Helper
-  const applyPreset = (presetName: string) => {
-    if (presetName === 'goa-party') {
-      setDestination('Goa');
-      setNumberOfDays(3);
-      setBudgetINR(15000);
-      setSelectedInterests(['nightlife', 'beaches', 'food']);
-      setCrowdTolerance('high');
-      setPriorityWeights({ rating: 3, budget: 5, distance: 3, crowd: 1 });
-    } else if (presetName === 'goa-peace') {
-      setDestination('Goa');
-      setNumberOfDays(3);
-      setBudgetINR(45000);
-      setSelectedInterests(['peaceful spots', 'nature', 'beaches']);
-      setCrowdTolerance('low');
-      setPriorityWeights({ rating: 5, budget: 1, distance: 2, crowd: 5 });
-    } else if (presetName === 'munnar-nature') {
-      setDestination('Munnar');
-      setNumberOfDays(4);
-      setBudgetINR(25000);
-      setSelectedInterests(['nature', 'peaceful spots']);
-      setCrowdTolerance('low');
-      setPriorityWeights({ rating: 5, budget: 3, distance: 2, crowd: 4 });
-    } else if (presetName === 'pondi-culture') {
-      setDestination('Pondicherry');
-      setNumberOfDays(2);
-      setBudgetINR(18000);
-      setSelectedInterests(['culture', 'food', 'peaceful spots']);
-      setCrowdTolerance('medium');
-      setPriorityWeights({ rating: 4, budget: 3, distance: 4, crowd: 3 });
+  // Quick Traveler Presets Helper: Keeps current destination intact, updates weights, crowd tolerance, and destination-appropriate interests
+  const applyPreset = (presetId: string) => {
+    const preset = TRAVELER_PRESETS.find((p) => p.id === presetId);
+    if (!preset) return;
+
+    setActivePreset(presetId);
+    setCrowdTolerance(preset.crowdTolerance);
+    setPriorityWeights({ ...preset.priorityWeights });
+
+    // Available interests in currently loaded destination items
+    const availableInterests = Array.from(
+      new Set(items.flatMap((item) => item.interests || []))
+    ) as Interest[];
+
+    if (availableInterests.length > 0) {
+      const matched = preset.targetInterests.filter((i) => availableInterests.includes(i));
+      if (matched.length > 0) {
+        setSelectedInterests(matched);
+      } else {
+        // Fallback to top available destination interests if none match
+        setSelectedInterests(availableInterests.slice(0, 2));
+      }
+    } else {
+      setSelectedInterests([...preset.targetInterests]);
     }
   };
 
@@ -273,7 +344,7 @@ export function App() {
               </div>
               <div className="hero-feature-text">
                 <div className="feature-title">Pan-India Coverage</div>
-                <div className="feature-desc">50+ curated destinations across North & South India</div>
+                <div className="feature-desc">56 curated destinations (50 cities & 6 states) across North & South India</div>
               </div>
             </div>
           </div>
@@ -429,34 +500,21 @@ export function App() {
           <Flame size={15} style={{ display: 'inline', marginRight: 4, color: '#f59e0b' }} />
           Traveler Presets:
         </span>
-        <button
-          type="button"
-          className="preset-btn"
-          onClick={() => applyPreset('goa-party')}
-        >
-          Preset 1: Goa Party & Nightlife (High crowd, Budget focus)
-        </button>
-        <button
-          type="button"
-          className="preset-btn"
-          onClick={() => applyPreset('goa-peace')}
-        >
-          Preset 2: Goa Serenity & Secluded (Low crowd, Peaceful spots)
-        </button>
-        <button
-          type="button"
-          className="preset-btn"
-          onClick={() => applyPreset('munnar-nature')}
-        >
-          Preset 3: Munnar Mountain Nature
-        </button>
-        <button
-          type="button"
-          className="preset-btn"
-          onClick={() => applyPreset('pondi-culture')}
-        >
-          Preset 4: Pondicherry Heritage & Cafes
-        </button>
+        {TRAVELER_PRESETS.map((preset) => {
+          const isActive = activePreset === preset.id;
+          return (
+            <button
+              key={preset.id}
+              type="button"
+              className={`preset-btn ${isActive ? 'active' : ''}`}
+              onClick={() => applyPreset(preset.id)}
+              title={preset.description}
+            >
+              <span>{preset.icon}</span>
+              <span>{preset.name}</span>
+            </button>
+          );
+        })}
       </div>
 
       {/* INPUT FORM PANEL */}
@@ -574,7 +632,10 @@ export function App() {
             <div className="crowd-options-grid">
               <div
                 className={`crowd-option-card ${crowdTolerance === 'low' ? 'selected' : ''}`}
-                onClick={() => setCrowdTolerance('low')}
+                onClick={() => {
+                  setActivePreset(null);
+                  setCrowdTolerance('low');
+                }}
               >
                 <div className="crowd-card-title">
                   <span>🍃 Low Crowd</span>
@@ -587,7 +648,10 @@ export function App() {
 
               <div
                 className={`crowd-option-card ${crowdTolerance === 'medium' ? 'selected' : ''}`}
-                onClick={() => setCrowdTolerance('medium')}
+                onClick={() => {
+                  setActivePreset(null);
+                  setCrowdTolerance('medium');
+                }}
               >
                 <div className="crowd-card-title">
                   <span>⚖️ Medium Crowd</span>
@@ -600,7 +664,10 @@ export function App() {
 
               <div
                 className={`crowd-option-card ${crowdTolerance === 'high' ? 'selected' : ''}`}
-                onClick={() => setCrowdTolerance('high')}
+                onClick={() => {
+                  setActivePreset(null);
+                  setCrowdTolerance('high');
+                }}
               >
                 <div className="crowd-card-title">
                   <span>🔥 High Crowd</span>

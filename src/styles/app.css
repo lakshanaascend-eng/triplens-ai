@@ -565,6 +565,19 @@ body {
   transform: translateY(-1px);
 }
 
+.preset-btn.active {
+  background: var(--primary-600);
+  color: #ffffff;
+  border-color: var(--primary-600);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+}
+
+.preset-btn.active:hover {
+  background: var(--primary-700);
+  color: #ffffff;
+  border-color: var(--primary-700);
+}
+
 /* =========================================
    3. INPUT FORM PANEL (Modernized)
    ========================================= */
