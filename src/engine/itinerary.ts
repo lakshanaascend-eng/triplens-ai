@@ -9,72 +9,113 @@ export function buildItinerary(
   const days = Math.max(1, Math.min(7, numberOfDays));
   const itinerary: DayItinerary[] = [];
 
-  // Filter out Skip places for the itinerary
-  const candidatePlaces = scoredPlaces.filter((p) => p.tier !== 'Skip');
-  // If not enough places, fallback to all places
-  const pool = candidatePlaces.length >= days ? candidatePlaces : scoredPlaces;
+  // Prioritize non-Skip places first; fallback to next-best lower tier if needed
+  const nonSkipPlaces = scoredPlaces.filter((p) => p.tier !== 'Skip');
+  const skipPlaces = scoredPlaces.filter((p) => p.tier === 'Skip');
+  const placePool: ScoredPlace[] = [...nonSkipPlaces, ...skipPlaces];
 
+  // The hotel stay stays consistent across all days as the traveler's home base
   const topHotel = scoredHotels.length > 0 ? scoredHotels[0] : null;
 
+  // Strict global exclusion sets to guarantee NO repeated attractions or dining spots
   const usedPlaceIds = new Set<string>();
+  const usedRestaurantIds = new Set<string>();
 
   for (let day = 1; day <= days; day++) {
-    const available = pool.filter((p) => !usedPlaceIds.has(p.item.id));
-    
-    // Anchor the day's focus zone to the highest-ranked place currently available
-    const anchorPlace = available.length > 0 ? available[0] : (pool.length > 0 ? pool[0] : null);
+    // Current remaining unused places
+    const available = placePool.filter((p) => !usedPlaceIds.has(p.item.id));
+
+    // Anchor the day's primary geographic cluster to the top-scoring unused place
+    const anchorPlace = available.length > 0 ? available[0] : null;
     const targetZone = anchorPlace?.item.locationZone || 'Central';
 
-    const pickPlace = (preferredTime: 'morning' | 'afternoon' | 'evening' | 'night') => {
-      let poolToUse = pool.filter(p => !usedPlaceIds.has(p.item.id) && (p.item.locationZone || 'Central') === targetZone);
-      // Fallback to globally available if zone is exhausted
-      if (poolToUse.length === 0) {
-        poolToUse = pool.filter(p => !usedPlaceIds.has(p.item.id));
-      }
-      if (poolToUse.length === 0) return null;
+    /**
+     * Pick a strictly unique place for a specific time slot:
+     * 1. Same zone & matching preferred time of day
+     * 2. Any zone & matching preferred time of day
+     * 3. Same zone & any time of day
+     * 4. Next highest-scoring unused place anywhere
+     * If all unique places are exhausted, returns null (never repeats a place).
+     */
+    const pickPlace = (preferredTime: 'morning' | 'afternoon' | 'evening' | 'night'): ScoredPlace | null => {
+      // 1. Same zone & matching preferred time
+      let candidate = placePool.find(
+        (p) =>
+          !usedPlaceIds.has(p.item.id) &&
+          (p.item.locationZone || 'Central') === targetZone &&
+          p.item.bestTimeOfDay === preferredTime
+      );
 
-      let pick = poolToUse.find(p => p.item.bestTimeOfDay === preferredTime) || poolToUse[0];
-      if (pick) usedPlaceIds.add(pick.item.id);
-      return pick;
+      // 2. Any zone & matching preferred time
+      if (!candidate) {
+        candidate = placePool.find(
+          (p) => !usedPlaceIds.has(p.item.id) && p.item.bestTimeOfDay === preferredTime
+        );
+      }
+
+      // 3. Same zone & any time
+      if (!candidate) {
+        candidate = placePool.find(
+          (p) =>
+            !usedPlaceIds.has(p.item.id) &&
+            (p.item.locationZone || 'Central') === targetZone
+        );
+      }
+
+      // 4. Next highest-scoring unused place anywhere
+      if (!candidate) {
+        candidate = placePool.find((p) => !usedPlaceIds.has(p.item.id));
+      }
+
+      if (candidate) {
+        usedPlaceIds.add(candidate.item.id);
+        return candidate;
+      }
+
+      return null;
     };
 
-    let morning = pickPlace('morning');
-    let afternoon = pickPlace('afternoon');
+    const morning = pickPlace('morning');
+    const afternoon = pickPlace('afternoon');
     let evening = pickPlace('evening');
-    
     if (!evening) {
       evening = pickPlace('night');
     }
 
-    // If day ran out of distinct places completely, cycle gracefully to avoid empty slots in UI
-    if (!morning && pool.length > 0) morning = pool[(day * 3 - 3) % pool.length];
-    if (!afternoon && pool.length > 1) afternoon = pool[(day * 3 - 2) % pool.length];
-    if (!evening && pool.length > 2) evening = pool[(day * 3 - 1) % pool.length];
+    // Restaurants for lunch and dinner: strictly unique selections across all days
+    const availableRestaurantsForLunch = scoredRestaurants.filter(
+      (r) => !usedRestaurantIds.has(r.item.id)
+    );
+    const lunchSpot = availableRestaurantsForLunch.length > 0 ? availableRestaurantsForLunch[0] : null;
+    if (lunchSpot) {
+      usedRestaurantIds.add(lunchSpot.item.id);
+    }
 
-    // Restaurants for lunch and dinner
-    const lunchSpot =
-      scoredRestaurants.length > 0
-        ? scoredRestaurants[(day - 1) % scoredRestaurants.length]
-        : null;
-    const dinnerSpot =
-      scoredRestaurants.length > 1
-        ? scoredRestaurants[day % scoredRestaurants.length]
-        : lunchSpot;
+    const availableRestaurantsForDinner = scoredRestaurants.filter(
+      (r) => !usedRestaurantIds.has(r.item.id)
+    );
+    const dinnerSpot = availableRestaurantsForDinner.length > 0 ? availableRestaurantsForDinner[0] : null;
+    if (dinnerSpot) {
+      usedRestaurantIds.add(dinnerSpot.item.id);
+    }
 
     // Dynamically name the day based on the actual picked places
     const dayPlaces = [morning, afternoon, evening].filter(Boolean) as ScoredPlace[];
-    const uniqueZones = Array.from(new Set(dayPlaces.map(p => p.item.locationZone).filter(Boolean)));
-    const uniqueInterests = Array.from(new Set(dayPlaces.flatMap(p => p.item.interests).filter(Boolean)));
+    const uniqueZones = Array.from(
+      new Set(dayPlaces.map((p) => p.item.locationZone).filter(Boolean))
+    );
+    const uniqueInterests = Array.from(
+      new Set(dayPlaces.flatMap((p) => p.item.interests).filter(Boolean))
+    );
 
     let themeZone = 'City Highlights';
-    if (uniqueZones.length === 1 && uniqueZones[0]) {
-      // All places are in the same zone
+    if (dayPlaces.length === 0) {
+      themeZone = 'Leisure & Open Exploration';
+    } else if (uniqueZones.length === 1 && uniqueZones[0]) {
       themeZone = `${uniqueZones[0]} Focus`;
     } else if (uniqueZones.length === 2) {
-      // Spans exactly two zones
       themeZone = `${uniqueZones[0]} & ${uniqueZones[1]}`;
     } else if (uniqueInterests.length >= 2) {
-      // 3+ zones, fallback to interest themes
       themeZone = `${uniqueInterests[0]} & ${uniqueInterests[1]} Highlights`;
     } else {
       themeZone = 'Mixed Exploration';

@@ -35,10 +35,8 @@ import {
   Landmark,
   Music,
   HeartHandshake,
-  ShieldAlert,
   Flame,
-  Target,
-  Map,
+  ShieldAlert,
   Check,
   ArrowDown,
 } from 'lucide-react';
@@ -288,171 +286,261 @@ export function App() {
 
   return (
     <div className="app-container">
+
       {/* =========================================
-          HERO SECTION
+          SITE NAV BAR
           ========================================= */}
+      <nav className="site-nav" style={{ margin: '0 -24px' }}>
+        <div className="site-nav-inner">
+          <a className="nav-logo" href="#" onClick={(e) => e.preventDefault()}>
+            <span className="nav-logo-mark">
+              <Compass size={18} />
+            </span>
+            <span className="nav-wordmark">TripLens AI</span>
+          </a>
+
+          <ul className="nav-links">
+            <li><a className="nav-link" href="#" onClick={(e) => e.preventDefault()}>Home</a></li>
+            <li>
+              <a
+                className="nav-link"
+                href="#form-panel"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('form-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                How It Works
+              </a>
+            </li>
+            <li>
+              <a
+                className="nav-link"
+                href="#ranked-places-results"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('ranked-places-results')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                Results
+              </a>
+            </li>
+          </ul>
+
+          <button
+            type="button"
+            className="nav-cta-btn"
+            onClick={() => {
+              const el = document.getElementById('form-panel');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+          >
+            <span>Try the Planner</span>
+            <ArrowDown size={15} />
+          </button>
+        </div>
+      </nav>
+
       {/* =========================================
-          HERO SECTION
+          HERO SECTION (Two-Column Asymmetric)
           ========================================= */}
       <section className="hero-wrapper">
+        {/* unused glow divs kept for CSS compatibility */}
         <div className="hero-glow-1" />
         <div className="hero-glow-2" />
 
         <div className="hero-content">
-          <div className="hero-top-badge">
-            <Sparkles size={15} color="#a5b4fc" />
-            <span>EXPLAINABLE TRAVEL DECISION ENGINE</span>
+          {/* ── LEFT: Text content ── */}
+          <div className="hero-left">
+            <div className="hero-top-badge">
+              <Sparkles size={13} />
+              <span>Explainable Travel Decision Engine</span>
+            </div>
+
+            <h1 className="hero-title">
+              See through<br />the travel <em>hype.</em>
+            </h1>
+
+            <p className="hero-tagline">
+              Real utility scores. Transparent math.
+            </p>
+
+            <p className="hero-difference-statement">
+              Unlike generic 5-star review sites, TripLens calculates multi-factor utility scores to explain exactly <strong>WHY</strong> a place is ranked for your specific budget, vibe, and crowd tolerance.
+            </p>
+
+            <div className="hero-cta-wrap">
+              <button
+                type="button"
+                className="hero-cta-btn"
+                onClick={() => {
+                  const el = document.getElementById('form-panel');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                <span>Plan My Trip</span>
+                <ArrowDown size={16} />
+              </button>
+              <button
+                type="button"
+                className="hero-cta-secondary"
+                onClick={() => {
+                  const el = document.getElementById('ranked-places-results');
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+              >
+                See Results
+              </button>
+            </div>
+
+            {/* 4-Tier strip */}
+            <div className="hero-tiers-strip">
+              <span className="tiers-strip-title">4-Tier System:</span>
+              <div className="tiers-strip-chips">
+                <span className="tier-strip-chip chip-must">🌟 Must Visit</span>
+                <span className="tier-strip-chip chip-worth">👍 Worth Visiting</span>
+                <span className="tier-strip-chip chip-time">⏱️ If Time Allows</span>
+                <span className="tier-strip-chip chip-skip">⛔ Skip</span>
+              </div>
+            </div>
+
+            {/* Stats row */}
+            <div className="hero-stats-row">
+              <div className="hero-stat">
+                <span className="hero-stat-num">56</span>
+                <span className="hero-stat-label">Curated Destinations</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-num">400+</span>
+                <span className="hero-stat-label">Places Analyzed</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-num">4</span>
+                <span className="hero-stat-label">Tier Categories</span>
+              </div>
+              <div className="hero-stat">
+                <span className="hero-stat-num">100%</span>
+                <span className="hero-stat-label">Transparent Math</span>
+              </div>
+            </div>
           </div>
 
-          <h1 className="hero-title">
-            TripLens AI
-          </h1>
-
-          <p className="hero-tagline">
-            See through the travel hype.
-          </p>
-
-          <p className="hero-difference-statement">
-            Unlike generic 5-star review sites, TripLens calculates multi-factor utility scores to explain exactly <strong>WHY</strong> a place is ranked for your specific budget, vibe, and crowd tolerance.
-          </p>
-
-          {/* 3 Short Feature Highlights */}
-          <div className="hero-features-row">
-            <div className="hero-feature-item">
-              <div className="hero-feature-icon">
-                <Target size={20} />
-              </div>
-              <div className="hero-feature-text">
-                <div className="feature-title">Explainable Rankings</div>
-                <div className="feature-desc">Reveals exactly why each place fits your personal priorities</div>
-              </div>
-            </div>
-
-            <div className="hero-feature-item">
-              <div className="hero-feature-icon alert">
-                <ShieldAlert size={20} />
-              </div>
-              <div className="hero-feature-text">
-                <div className="feature-title">Rating Reality Check</div>
-                <div className="feature-desc">Catches when recent traveler sentiment disagrees with historical stars</div>
-              </div>
-            </div>
-
-            <div className="hero-feature-item">
-              <div className="hero-feature-icon">
-                <Map size={20} />
-              </div>
-              <div className="hero-feature-text">
-                <div className="feature-title">Pan-India Coverage</div>
-                <div className="feature-desc">56 curated destinations (50 cities & 6 states) across North & South India</div>
-              </div>
-            </div>
-          </div>
-
-          {/* 4-Tier Visual System Strip */}
-          <div className="hero-tiers-strip">
-            <span className="tiers-strip-title">4-Tier System:</span>
-            <div className="tiers-strip-chips">
-              <span className="tier-strip-chip chip-must">🌟 Must Visit (90–100)</span>
-              <span className="tier-strip-chip chip-worth">👍 Worth Visiting (75–89)</span>
-              <span className="tier-strip-chip chip-time">⏱️ If Time Allows (60–74)</span>
-              <span className="tier-strip-chip chip-skip">⛔ Skip (&lt;60)</span>
-            </div>
-          </div>
-
-          {/* Visual Example / Output Preview Mockup */}
-          <div className="hero-preview-container">
-            <div className="hero-preview-header">
-              <div className="preview-label-group">
-                <Sparkles size={14} color="#818cf8" />
-                <span className="preview-label">Live Decision Output Preview</span>
-              </div>
-              <span className="preview-sub-pill">
-                {topRankedPlace ? `Current #1 for ${destination}` : 'Live Output'}
-              </span>
-            </div>
-
-            <div className="hero-preview-card">
-              {topRankedPlace ? (
-                <>
-                  <div className="preview-card-top">
-                    <div className="preview-place-info">
-                      <h4 className="preview-place-name">{topRankedPlace.item.name}</h4>
-                      <div className="preview-place-loc">
-                        <MapPin size={13} color="#94a3b8" />
-                        <span>{topRankedPlace.item.locationZone} • {topRankedPlace.item.distanceMinutes} mins transit</span>
-                      </div>
-                    </div>
-                    <div className="preview-score-badge">
-                      <div className="preview-score-circle">
-                        <span className="preview-score-val">{topRankedPlace.priorityScore}</span>
-                        <span className="preview-score-denom">/100</span>
-                      </div>
-                      <span className="preview-tier-pill">
-                        {topRankedPlace.tier === 'Must Visit' ? '🌟 Must Visit' : topRankedPlace.tier === 'Worth Visiting' ? '👍 Worth Visiting' : topRankedPlace.tier === 'If Time Allows' ? '⏱️ If Time Allows' : '⛔ Skip'}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="preview-attributes-row">
-                    <span className="preview-attr-pill">⭐ <strong>{topRankedPlace.item.rating}★</strong> ({topRankedPlace.item.reviewCount.toLocaleString()})</span>
-                    <span className="preview-attr-pill"><Users size={12} /> Crowd: <strong>{topRankedPlace.item.crowdLevel}</strong></span>
-                    <span className="preview-attr-pill"><IndianRupee size={12} /> Est. <strong>₹{topRankedPlace.item.estimatedCostINR.toLocaleString()}</strong></span>
-                    <span className="preview-attr-pill"><TrendingUp size={12} /> Trend: <strong>{topRankedPlace.item.recentReviewTrend}</strong></span>
-                  </div>
-
-                  <div className="preview-why-box">
-                    <Sparkles size={16} color="#0284c7" style={{ flexShrink: 0, marginTop: 2 }} />
-                    <div>
-                      <strong style={{ color: '#0369a1' }}>Why this place? </strong>
-                      <span>{topRankedPlace.whyExplanation}</span>
-                    </div>
-                  </div>
-
-                  <div className="preview-reality-box">
-                    {topRankedPlace.realityCheck.isFlagged ? (
-                      <ShieldAlert size={16} color="#e11d48" style={{ flexShrink: 0, marginTop: 2 }} />
-                    ) : topRankedPlace.realityCheck.type === 'IMPROVING' ? (
-                      <TrendingUp size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: 2 }} />
-                    ) : (
-                      <CheckCircle2 size={16} color="#64748b" style={{ flexShrink: 0, marginTop: 2 }} />
-                    )}
-                    <div>
-                      <strong style={{ color: topRankedPlace.realityCheck.isFlagged ? '#e11d48' : topRankedPlace.realityCheck.type === 'IMPROVING' ? '#16a34a' : '#475569' }}>
-                        {topRankedPlace.realityCheck.isFlagged
-                          ? '⚠️ RATING REALITY CHECK FLAGGED: '
-                          : topRankedPlace.realityCheck.type === 'IMPROVING'
-                          ? '📈 POSITIVE TREND: '
-                          : '✓ RATING REALITY CHECK: '}
-                      </strong>
-                      <span>{topRankedPlace.realityCheck.message}</span>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <div style={{ padding: 20, textAlign: 'center', color: '#94a3b8' }}>
-                  Loading destination data...
+          {/* ── RIGHT: Dark Navy Live Preview Card ── */}
+          <div className="hero-right">
+            <div className="hero-preview-container">
+              {/* Header */}
+              <div className="hero-preview-header">
+                <div className="preview-label-group">
+                  <span className="preview-status-dot" />
+                  <span>Live Decision Output Preview</span>
                 </div>
-              )}
-            </div>
-          </div>
+                <span className="preview-sub-pill">
+                  {topRankedPlace ? `Current #1 · ${destination}` : 'Live Output'}
+                </span>
+              </div>
 
-          {/* Obvious Call to Action */}
-          <div className="hero-cta-wrap">
-            <button
-              type="button"
-              className="hero-cta-btn"
-              onClick={() => {
-                const el = document.getElementById('form-panel');
-                if (el) {
-                  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-            >
-              <span>Plan My Trip</span>
-              <ArrowDown size={18} />
-            </button>
-            <span className="hero-cta-note">Instant AI ranking & geo-sequenced itineraries · 100% transparent math</span>
+              <div className="hero-preview-inner">
+                {topRankedPlace ? (
+                  <>
+                    {/* Inset context box */}
+                    <div className="preview-inset-box">
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 9.5, letterSpacing: '0.07em', textTransform: 'uppercase', color: 'rgba(245,241,234,0.4)', marginBottom: 8 }}>
+                        Engine output · {destination} · {places.length} places ranked
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'rgba(245,241,234,0.55)' }}>
+                        Weights: Quality {priorityWeights.rating}/5 · Budget {priorityWeights.budget}/5 · Proximity {priorityWeights.distance}/5 · Crowd {priorityWeights.crowd}/5
+                      </div>
+                    </div>
+
+                    {/* Divider pill */}
+                    <div className="preview-divider-pill">
+                      <div className="preview-divider-line" />
+                      <span className="preview-divider-label">Top Ranked Result</span>
+                      <div className="preview-divider-line" />
+                    </div>
+
+                    {/* Result card */}
+                    <div className="hero-preview-card">
+                      <div className="preview-card-top">
+                        <div className="preview-place-info">
+                          <h4 className="preview-place-name">{topRankedPlace.item.name}</h4>
+                          <div className="preview-place-loc">
+                            <MapPin size={12} color="rgba(245,241,234,0.4)" />
+                            <span>{topRankedPlace.item.locationZone} · {topRankedPlace.item.distanceMinutes} mins</span>
+                          </div>
+                        </div>
+                        <div className="preview-score-badge">
+                          <div className="preview-score-circle">
+                            <span className="preview-score-val">{topRankedPlace.priorityScore}</span>
+                            <span className="preview-score-denom">/100</span>
+                          </div>
+                          <span className="preview-tier-pill">
+                            {topRankedPlace.tier === 'Must Visit' ? '🌟 Must Visit'
+                              : topRankedPlace.tier === 'Worth Visiting' ? '👍 Worth Visiting'
+                              : topRankedPlace.tier === 'If Time Allows' ? '⏱️ If Time Allows'
+                              : '⛔ Skip'}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Stat chips grid */}
+                      <div className="preview-stat-chips">
+                        <div className="preview-stat-chip">
+                          <span className="psc-label">Rating</span>
+                          <span className="psc-value">⭐ {topRankedPlace.item.rating}★</span>
+                        </div>
+                        <div className="preview-stat-chip">
+                          <span className="psc-label">Crowd</span>
+                          <span className="psc-value"><Users size={11} /> {topRankedPlace.item.crowdLevel}</span>
+                        </div>
+                        <div className="preview-stat-chip">
+                          <span className="psc-label">Est. Cost</span>
+                          <span className="psc-value">₹{topRankedPlace.item.estimatedCostINR.toLocaleString()}</span>
+                        </div>
+                        <div className="preview-stat-chip">
+                          <span className="psc-label">Trend</span>
+                          <span className="psc-value"><TrendingUp size={11} /> {topRankedPlace.item.recentReviewTrend}</span>
+                        </div>
+                      </div>
+
+                      {/* Why box */}
+                      <div className="preview-why-box">
+                        <Sparkles size={14} color="var(--coral)" style={{ flexShrink: 0, marginTop: 2 }} />
+                        <div>
+                          <strong style={{ color: 'rgba(245,241,234,0.9)' }}>Why this place? </strong>
+                          <span>{topRankedPlace.whyExplanation}</span>
+                        </div>
+                      </div>
+
+                      {/* Reality check verdict */}
+                      <div className="preview-reality-box">
+                        {topRankedPlace.realityCheck.isFlagged ? (
+                          <ShieldAlert size={14} color="#FDA4AF" style={{ flexShrink: 0, marginTop: 1 }} />
+                        ) : topRankedPlace.realityCheck.type === 'IMPROVING' ? (
+                          <TrendingUp size={14} color="var(--accent-teal-mid)" style={{ flexShrink: 0, marginTop: 1 }} />
+                        ) : (
+                          <CheckCircle2 size={14} color="rgba(245,241,234,0.4)" style={{ flexShrink: 0, marginTop: 1 }} />
+                        )}
+                        <div>
+                          <strong style={{ color: topRankedPlace.realityCheck.isFlagged ? '#FDA4AF' : topRankedPlace.realityCheck.type === 'IMPROVING' ? 'var(--accent-teal-mid)' : 'rgba(245,241,234,0.5)' }}>
+                            {topRankedPlace.realityCheck.isFlagged
+                              ? '⚠️ RATING REALITY CHECK: '
+                              : topRankedPlace.realityCheck.type === 'IMPROVING'
+                              ? '📈 POSITIVE TREND: '
+                              : '✓ STABLE: '}
+                          </strong>
+                          <span>{topRankedPlace.realityCheck.message}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div style={{ padding: 24, textAlign: 'center', color: 'rgba(245,241,234,0.4)', fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.07em', textTransform: 'uppercase' }}>
+                    Loading destination data...
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -522,20 +610,20 @@ export function App() {
         <div className="form-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <h2>
-              <Sliders size={22} style={{ color: '#4f46e5' }} />
+              <Sliders size={22} style={{ color: 'var(--coral)' }} />
               Configure Your Trip Preferences
             </h2>
             {dataSource === 'curated' && (
-              <span style={{ fontSize: 11, background: '#10b981', color: 'white', padding: '2px 8px', borderRadius: 12, fontWeight: 600 }}>CURATED DATA</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.07em', textTransform: 'uppercase', background: 'var(--accent-teal)', color: 'white', padding: '2px 8px', borderRadius: 4, fontWeight: 700 }}>Curated Data</span>
             )}
             {dataSource === 'fallback' && (
-              <span style={{ fontSize: 11, background: '#f59e0b', color: 'white', padding: '2px 8px', borderRadius: 12, fontWeight: 600 }}>FALLBACK DATA</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.07em', textTransform: 'uppercase', background: 'var(--accent-amber-mid)', color: 'white', padding: '2px 8px', borderRadius: 4, fontWeight: 700 }}>Fallback Data</span>
             )}
             {dataSource === 'api' && (
-              <span style={{ fontSize: 11, background: '#6366f1', color: 'white', padding: '2px 8px', borderRadius: 12, fontWeight: 600 }}>LIVE API</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, letterSpacing: '0.07em', textTransform: 'uppercase', background: 'var(--coral)', color: 'white', padding: '2px 8px', borderRadius: 4, fontWeight: 700 }}>Live API</span>
             )}
           </div>
-          <p style={{ margin: 0, fontSize: 14, color: '#64748b' }}>
+          <p style={{ margin: 0, fontSize: 14, color: 'var(--text-muted)' }}>
             Adjust weights and constraints. The engine recalculates rankings, explanations, and itineraries in real time.
           </p>
         </div>
@@ -546,7 +634,7 @@ export function App() {
             {/* Destination Select */}
             <div className="form-group">
               <label htmlFor="destination-select">
-                <MapPin size={15} style={{ display: 'inline', marginRight: 6, color: '#4f46e5' }} />
+                <MapPin size={15} style={{ display: 'inline', marginRight: 6, color: 'var(--coral)' }} />
                 Target Destination
               </label>
               <select
@@ -566,7 +654,7 @@ export function App() {
             {/* Trip Duration */}
             <div className="form-group">
               <label htmlFor="days-input">
-                <Calendar size={15} style={{ display: 'inline', marginRight: 6, color: '#4f46e5' }} />
+                <Calendar size={15} style={{ display: 'inline', marginRight: 6, color: 'var(--coral)' }} />
                 Trip Duration (Days)
               </label>
               <input
@@ -583,7 +671,7 @@ export function App() {
             {/* Budget */}
             <div className="form-group">
               <label htmlFor="budget-input">
-                <IndianRupee size={15} style={{ display: 'inline', marginRight: 6, color: '#4f46e5' }} />
+                <IndianRupee size={15} style={{ display: 'inline', marginRight: 6, color: 'var(--coral)' }} />
                 Total Budget (₹)
               </label>
               <input
@@ -595,7 +683,7 @@ export function App() {
                 value={budgetINR}
                 onChange={(e) => setBudgetINR(Math.max(0, Number(e.target.value)))}
               />
-              <span style={{ fontSize: 12.5, color: '#64748b', display: 'block', marginTop: 4 }}>
+              <span style={{ fontSize: 12.5, color: 'var(--text-muted)', display: 'block', marginTop: 4 }}>
                 Estimated <strong>₹{Math.round(budgetINR / numberOfDays).toLocaleString()}</strong> / day
               </span>
             </div>
@@ -603,7 +691,7 @@ export function App() {
 
           {/* Interests Multi-Select */}
           <div className="interests-container">
-            <label style={{ fontSize: 14, fontWeight: 700, color: '#0f172a' }}>
+            <label style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-main)' }}>
               Your Key Interests (Select multiple to apply positive utility multipliers):
             </label>
             <div className="chips-wrap">
@@ -625,8 +713,8 @@ export function App() {
 
           {/* Crowd Tolerance Selector */}
           <div className="crowd-selector-wrap">
-            <label style={{ fontSize: 14, fontWeight: 700, color: '#0f172a' }}>
-              <Users size={16} style={{ display: 'inline', marginRight: 6, color: '#4f46e5' }} />
+            <label style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-main)' }}>
+              <Users size={16} style={{ display: 'inline', marginRight: 6, color: 'var(--coral)' }} />
               Crowd Tolerance Level:
             </label>
             <div className="crowd-options-grid">
@@ -863,130 +951,204 @@ export function App() {
             </p>
           </div>
 
-          {itinerary.map((day) => (
-            <div key={day.dayNumber} className="itinerary-day-card">
-              <div className="day-header">
-                <h3 className="day-title">
-                  <Calendar size={22} color="#4f46e5" />
-                  Day {day.dayNumber} — {day.themeZone}
-                </h3>
-                {day.recommendedHotel && (
-                  <div className="hotel-base-pill">
-                    <Building2 size={15} />
-                    <span>
-                      Stay: {day.recommendedHotel.item.name} ({day.recommendedHotel.priorityScore}/100)
-                    </span>
+          {itinerary.map((day) => {
+            const hasAnyPlaces = Boolean(day.morning || day.afternoon || day.evening);
+            return (
+              <div key={day.dayNumber} className="itinerary-day-card">
+                <div className="day-header">
+                  <h3 className="day-title">
+                    <Calendar size={20} className="day-icon" />
+                    Day {day.dayNumber} — {day.themeZone}
+                  </h3>
+                  {day.recommendedHotel && (
+                    <div className="hotel-base-pill">
+                      <Building2 size={14} />
+                      <span>
+                        Stay: {day.recommendedHotel.item.name} ({day.recommendedHotel.priorityScore}/100)
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {!hasAnyPlaces && (
+                  <div className="timeline-notice-card">
+                    <Compass size={20} className="notice-icon" />
+                    <div className="notice-content">
+                      <h4 className="notice-title">Open Exploration & Leisure Day</h4>
+                      <p className="notice-desc">
+                        All top unique curated attractions for {destination} have been scheduled into earlier days. Use this day for leisurely wanderings, artisan shopping, or revisiting favorite vistas without repeated sightseeing.
+                      </p>
+                    </div>
                   </div>
                 )}
+
+                <div className="timeline-flow">
+                  {/* Morning Slot */}
+                  {day.morning ? (
+                    <div className="timeline-slot">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner">
+                        <div className="slot-header">
+                          <span className="slot-badge">🌅 Morning Highlight</span>
+                          <span className="slot-score-tag">
+                            Score: {day.morning.priorityScore}
+                          </span>
+                        </div>
+                        <h4 className="slot-item-name">
+                          {day.morning.item.name}{' '}
+                          <span className="slot-meta">
+                            ({day.morning.item.locationZone} • {day.morning.item.distanceMinutes}m)
+                          </span>
+                        </h4>
+                        <p className="slot-reason">{day.morning.whyExplanation}</p>
+                      </div>
+                    </div>
+                  ) : hasAnyPlaces ? (
+                    <div className="timeline-slot leisure">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner leisure-spot">
+                        <div className="slot-header">
+                          <span className="slot-badge">🌅 Morning Free Time</span>
+                        </div>
+                        <h4 className="slot-item-name">Relaxed Morning Pace</h4>
+                        <p className="slot-reason">Fewer unique attractions remaining in this zone. Enjoy a leisurely breakfast or stroll around your stay.</p>
+                      </div>
+                    </div>
+                  ) : null}
+
+                  {/* Lunch Break */}
+                  {day.lunchSpot ? (
+                    <div className="timeline-slot meal">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner meal-spot">
+                        <div className="slot-header">
+                          <span className="slot-badge meal-badge">
+                            🍽️ Lunch Recommendation
+                          </span>
+                          <span className="slot-cost-tag">
+                            Est. ₹{day.lunchSpot.item.estimatedCostINR}
+                          </span>
+                        </div>
+                        <h4 className="slot-item-name">{day.lunchSpot.item.name}</h4>
+                        <p className="slot-reason">{day.lunchSpot.whyExplanation}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="timeline-slot meal leisure">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner meal-spot leisure-meal">
+                        <div className="slot-header">
+                          <span className="slot-badge meal-badge">
+                            🍽️ Midday Dining
+                          </span>
+                        </div>
+                        <h4 className="slot-item-name">Local Culinary Discovery</h4>
+                        <p className="slot-reason">All top curated restaurants scheduled. Explore nearby neighborhood cafes or authentic regional street food.</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Afternoon Slot */}
+                  {day.afternoon ? (
+                    <div className="timeline-slot">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner">
+                        <div className="slot-header">
+                          <span className="slot-badge">☀️ Afternoon Activity</span>
+                          <span className="slot-score-tag">
+                            Score: {day.afternoon.priorityScore}
+                          </span>
+                        </div>
+                        <h4 className="slot-item-name">
+                          {day.afternoon.item.name}{' '}
+                          <span className="slot-meta">
+                            ({day.afternoon.item.locationZone} • {day.afternoon.item.distanceMinutes}m)
+                          </span>
+                        </h4>
+                        <p className="slot-reason">{day.afternoon.whyExplanation}</p>
+                      </div>
+                    </div>
+                  ) : hasAnyPlaces ? (
+                    <div className="timeline-slot leisure">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner leisure-spot">
+                        <div className="slot-header">
+                          <span className="slot-badge">☀️ Afternoon Leisure</span>
+                        </div>
+                        <h4 className="slot-item-name">Self-Paced Exploration</h4>
+                        <p className="slot-reason">Fewer unique high-scoring attractions available. Ideal time to browse local handicrafts, tea shops, or unwind.</p>
+                      </div>
+                    </div>
+                  ) : null}
+
+                  {/* Evening / Night Slot */}
+                  {day.evening ? (
+                    <div className="timeline-slot">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner">
+                        <div className="slot-header">
+                          <span className="slot-badge">🌆 Evening Experience</span>
+                          <span className="slot-score-tag">
+                            Score: {day.evening.priorityScore}
+                          </span>
+                        </div>
+                        <h4 className="slot-item-name">
+                          {day.evening.item.name}{' '}
+                          <span className="slot-meta">
+                            ({day.evening.item.locationZone} • {day.evening.item.distanceMinutes}m)
+                          </span>
+                        </h4>
+                        <p className="slot-reason">{day.evening.whyExplanation}</p>
+                      </div>
+                    </div>
+                  ) : hasAnyPlaces ? (
+                    <div className="timeline-slot leisure">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner leisure-spot">
+                        <div className="slot-header">
+                          <span className="slot-badge">🌆 Sunset & Evening Leisure</span>
+                        </div>
+                        <h4 className="slot-item-name">Sunset Views & Unwinding</h4>
+                        <p className="slot-reason">Take in sunset viewpoints, leisurely strolls along the promenade, or enjoy hotel amenities.</p>
+                      </div>
+                    </div>
+                  ) : null}
+
+                  {/* Dinner Spot */}
+                  {day.dinnerSpot ? (
+                    <div className="timeline-slot meal">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner meal-spot">
+                        <div className="slot-header">
+                          <span className="slot-badge meal-badge">
+                            🍷 Dinner Recommendation
+                          </span>
+                          <span className="slot-cost-tag">
+                            Est. ₹{day.dinnerSpot.item.estimatedCostINR}
+                          </span>
+                        </div>
+                        <h4 className="slot-item-name">{day.dinnerSpot.item.name}</h4>
+                        <p className="slot-reason">{day.dinnerSpot.whyExplanation}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="timeline-slot meal leisure">
+                      <div className="timeline-dot" />
+                      <div className="slot-inner meal-spot leisure-meal">
+                        <div className="slot-header">
+                          <span className="slot-badge meal-badge">
+                            🍷 Evening Dining
+                          </span>
+                        </div>
+                        <h4 className="slot-item-name">Chef's Choice & Night Markets</h4>
+                        <p className="slot-reason">Sample vibrant night market stalls or relax with an unhurried dinner at your hotel's in-house dining.</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
-
-              <div className="timeline-flow">
-                {/* Morning Slot */}
-                {day.morning && (
-                  <div className="timeline-slot">
-                    <div className="timeline-dot" />
-                    <div className="slot-inner">
-                      <div className="slot-header">
-                        <span className="slot-badge">🌅 Morning Highlight</span>
-                        <span style={{ fontSize: 13, fontWeight: 800, color: '#4f46e5' }}>
-                          Score: {day.morning.priorityScore}
-                        </span>
-                      </div>
-                      <h4 className="slot-item-name">
-                        {day.morning.item.name}{' '}
-                        <span style={{ fontSize: 13, fontWeight: 'normal', color: '#64748b' }}>
-                          ({day.morning.item.locationZone} • {day.morning.item.distanceMinutes}m)
-                        </span>
-                      </h4>
-                      <p className="slot-reason">{day.morning.whyExplanation}</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Lunch Break */}
-                {day.lunchSpot && (
-                  <div className="timeline-slot meal">
-                    <div className="timeline-dot" />
-                    <div className="slot-inner meal-spot">
-                      <div className="slot-header">
-                        <span className="slot-badge" style={{ color: '#b45309' }}>
-                          🍽️ Lunch Recommendation
-                        </span>
-                        <span style={{ fontSize: 13, fontWeight: 800, color: '#b45309' }}>
-                          Est. ₹{day.lunchSpot.item.estimatedCostINR}
-                        </span>
-                      </div>
-                      <h4 className="slot-item-name">{day.lunchSpot.item.name}</h4>
-                      <p className="slot-reason">{day.lunchSpot.whyExplanation}</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Afternoon Slot */}
-                {day.afternoon && (
-                  <div className="timeline-slot">
-                    <div className="timeline-dot" />
-                    <div className="slot-inner">
-                      <div className="slot-header">
-                        <span className="slot-badge">☀️ Afternoon Activity</span>
-                        <span style={{ fontSize: 13, fontWeight: 800, color: '#4f46e5' }}>
-                          Score: {day.afternoon.priorityScore}
-                        </span>
-                      </div>
-                      <h4 className="slot-item-name">
-                        {day.afternoon.item.name}{' '}
-                        <span style={{ fontSize: 13, fontWeight: 'normal', color: '#64748b' }}>
-                          ({day.afternoon.item.locationZone} • {day.afternoon.item.distanceMinutes}m)
-                        </span>
-                      </h4>
-                      <p className="slot-reason">{day.afternoon.whyExplanation}</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Evening / Night Slot */}
-                {day.evening && (
-                  <div className="timeline-slot">
-                    <div className="timeline-dot" />
-                    <div className="slot-inner">
-                      <div className="slot-header">
-                        <span className="slot-badge">🌆 Evening Experience</span>
-                        <span style={{ fontSize: 13, fontWeight: 800, color: '#4f46e5' }}>
-                          Score: {day.evening.priorityScore}
-                        </span>
-                      </div>
-                      <h4 className="slot-item-name">
-                        {day.evening.item.name}{' '}
-                        <span style={{ fontSize: 13, fontWeight: 'normal', color: '#64748b' }}>
-                          ({day.evening.item.locationZone} • {day.evening.item.distanceMinutes}m)
-                        </span>
-                      </h4>
-                      <p className="slot-reason">{day.evening.whyExplanation}</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Dinner Spot */}
-                {day.dinnerSpot && (
-                  <div className="timeline-slot meal">
-                    <div className="timeline-dot" />
-                    <div className="slot-inner meal-spot">
-                      <div className="slot-header">
-                        <span className="slot-badge" style={{ color: '#b45309' }}>
-                          🍷 Dinner Recommendation
-                        </span>
-                        <span style={{ fontSize: 13, fontWeight: 800, color: '#b45309' }}>
-                          Est. ₹{day.dinnerSpot.item.estimatedCostINR}
-                        </span>
-                      </div>
-                      <h4 className="slot-item-name">{day.dinnerSpot.item.name}</h4>
-                      <p className="slot-reason">{day.dinnerSpot.whyExplanation}</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </section>
       )}
 
@@ -1114,7 +1276,7 @@ export function PlaceCard({ scored }: { scored: ScoredPlace }) {
             {item.name}
           </h4>
           <div className="place-loc-sub">
-            <MapPin size={14} color="#64748b" />
+            <MapPin size={14} color="rgba(245,241,234,0.4)" />
             <span>
               {item.locationZone} • {item.distanceMinutes} mins from central hub
             </span>
@@ -1157,20 +1319,20 @@ export function PlaceCard({ scored }: { scored: ScoredPlace }) {
       <div data-testid="why-explanation" className="why-box">
         <Sparkles size={18} className="why-icon" />
         <div style={{ width: '100%' }}>
-          <strong style={{ color: '#0369a1' }}>Why this place? </strong>
+          <strong style={{ color: 'rgba(245,241,234,0.9)' }}>Why this place? </strong>
           <span>{whyExplanation}</span>
           {factorPoints && (
             <div className="factor-breakdown-chips" style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#e0f2fe', color: '#0369a1' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 3, background: 'rgba(13,148,136,0.18)', color: 'var(--accent-teal-mid)', border: '1px solid rgba(20,184,166,0.3)' }}>
                 ⭐ Quality: +{factorPoints.quality} pts
               </span>
-              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#dcfce7', color: '#15803d' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 3, background: 'rgba(245,158,11,0.15)', color: '#FCD34D', border: '1px solid rgba(245,158,11,0.3)' }}>
                 💰 Budget: +{factorPoints.budget} pts
               </span>
-              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#fef9c3', color: '#854d0e' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 3, background: 'rgba(232,93,63,0.18)', color: '#FBBBA8', border: '1px solid rgba(232,93,63,0.3)' }}>
                 📍 Proximity: +{factorPoints.distance} pts
               </span>
-              <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 7px', borderRadius: 4, background: '#fce7f3', color: '#9d174d' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 3, background: 'rgba(255,255,255,0.07)', color: 'rgba(245,241,234,0.6)', border: '1px solid rgba(255,255,255,0.12)' }}>
                 👥 Crowd Vibe: +{factorPoints.crowd} pts
               </span>
             </div>
@@ -1186,11 +1348,11 @@ export function PlaceCard({ scored }: { scored: ScoredPlace }) {
         }`}
       >
         {realityCheck.isFlagged ? (
-          <ShieldAlert size={20} style={{ flexShrink: 0, marginTop: 1, color: '#e11d48' }} />
+          <ShieldAlert size={20} style={{ flexShrink: 0, marginTop: 1, color: '#FDA4AF' }} />
         ) : realityCheck.type === 'IMPROVING' ? (
-          <TrendingUp size={20} style={{ flexShrink: 0, marginTop: 1, color: '#16a34a' }} />
+          <TrendingUp size={20} style={{ flexShrink: 0, marginTop: 1, color: 'var(--accent-teal-mid)' }} />
         ) : (
-          <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: '#64748b' }} />
+          <CheckCircle2 size={20} style={{ flexShrink: 0, marginTop: 1, color: 'rgba(245,241,234,0.35)' }} />
         )}
         <div>
           <strong data-testid="reality-check-status">
@@ -1199,7 +1361,7 @@ export function PlaceCard({ scored }: { scored: ScoredPlace }) {
               : realityCheck.type === 'IMPROVING'
               ? '📈 POSITIVE TREND'
               : '✓ RATING REALITY CHECK'}
-            :{' '}
+            {' '}
           </strong>
           <span data-testid="reality-check-message">{realityCheck.message}</span>
         </div>
