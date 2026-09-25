@@ -226,8 +226,8 @@ export function App() {
   const topRankedPlace = places.length > 0 ? places[0] : null;
 
   const itinerary: DayItinerary[] = useMemo(() => {
-    return buildItinerary(places, hotels, restaurants, numberOfDays);
-  }, [places, hotels, restaurants, numberOfDays]);
+    return buildItinerary(places, hotels, restaurants, numberOfDays, items);
+  }, [places, hotels, restaurants, numberOfDays, items]);
 
   // Group places by Tier
   const tieredPlaces = useMemo(() => {
@@ -380,16 +380,6 @@ export function App() {
               >
                 <span>Plan My Trip</span>
                 <ArrowDown size={16} />
-              </button>
-              <button
-                type="button"
-                className="hero-cta-secondary"
-                onClick={() => {
-                  const el = document.getElementById('ranked-places-results');
-                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-              >
-                See Results
               </button>
             </div>
 
@@ -834,11 +824,39 @@ export function App() {
               </div>
             </div>
           </div>
+
+          {/* Action Button: Directly after Decision Factors */}
+          <div className="see-results-action-row">
+            {!destination.trim() && (
+              <span className="see-results-disabled-note">
+                Please enter or select a destination to compute results
+              </span>
+            )}
+            <button
+              type="button"
+              className="see-results-btn"
+              disabled={!destination.trim()}
+              onClick={() => {
+                if (!destination.trim()) return;
+                setIsComputing(true);
+                setTimeout(() => {
+                  setIsComputing(false);
+                }, 250);
+                const el = document.getElementById('results-section') || document.querySelector('.tabs-nav') || document.getElementById('ranked-places-results');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              <span>See Results</span>
+              <ArrowDown size={16} />
+            </button>
+          </div>
         </form>
       </section>
 
       {/* NAVIGATION TABS */}
-      <nav className="tabs-nav">
+      <nav id="results-section" className="tabs-nav">
         <button
           type="button"
           className={`tab-btn ${activeTab === 'places' ? 'active' : ''}`}
